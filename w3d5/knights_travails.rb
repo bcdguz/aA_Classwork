@@ -100,14 +100,6 @@ class KnightPathFinder
         return true
     end
 
-    def build_move_tree
-        queue = new_move_positions(@root_node.value)
-        queue.each do |position|
-            child = PolyTreeNode.new(position)
-            @root_node.add_child(child)
-        end
-    end
-
     def new_move_positions(pos)
 
         filtered_pos = KnightPathFinder.valid_moves(pos)
@@ -117,6 +109,22 @@ class KnightPathFinder
 
         @considered_positions += answers
         answers
+    end
+
+    def build_move_tree
+        queue = new_move_positions(@root_node.value)
+
+        until queue.empty?
+            
+            top_pos = queue.shift
+            
+            child = KnightPathFinder.new(top_pos)
+            @root_node.add_child(child.root_node)
+
+            queue += child.build_move_tree
+        end
+
+        queue
     end
 
 end

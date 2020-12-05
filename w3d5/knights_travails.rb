@@ -56,7 +56,8 @@ end
 
 
 class KnightPathFinder
-    attr_reader :root_node, :considered_positions
+    attr_reader :root_node
+    attr_accessor :considered_positions
 
     def initialize(starting_pos)
         @root_node = PolyTreeNode.new(starting_pos)
@@ -112,19 +113,28 @@ class KnightPathFinder
     end
 
     def build_move_tree
-        queue = new_move_positions(@root_node.value)
+        queue = new_move_positions(@root_node.value).all {|pos| KnightPathFinder.new(pos)} #[a bunch positions] we want thesto be root's children
 
         until queue.empty?
             
-            top_pos = queue.shift
+            top_pos = queue.shift #[first valid pos]
             
-            child = KnightPathFinder.new(top_pos)
-            @root_node.add_child(child.root_node)
+            
+         #[all prev considered]
+            # @root_node.add_child(child.root_node) #root node now parent of child
 
-            queue += child.build_move_tree
+            # child.root_node.parent = self
+            # # queue += child.build_move_tree #
+
+
+            #a two kids b c
+            #iterate through the top+pos kids and set their parent
+            
+            parent.each {|pos| }
+            queue += child.new_move_positions(child.root_node.value)
         end
 
-        queue
+        #queue
     end
 
 end

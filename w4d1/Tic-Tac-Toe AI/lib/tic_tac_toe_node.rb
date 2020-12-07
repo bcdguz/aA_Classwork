@@ -17,9 +17,8 @@ class TicTacToeNode
       true
     end
 
-    
-
-
+    return self.children.each {|child_node| child_node.losing_node?(evaluator)}
+ 
   end
 
   def winning_node?(evaluator)

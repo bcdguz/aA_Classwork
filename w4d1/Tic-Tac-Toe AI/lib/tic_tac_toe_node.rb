@@ -9,7 +9,17 @@ class TicTacToeNode
     @prev_move_pos = prev_move_pos
   end
 
-  def losing_node?(evaluator)
+  def losing_node?(evaluator) # assuming evaluator is :x or :o
+    # base case
+    if @board.winner == evaluator
+      false
+    elsif @board.over? && (@board.winner != evaluator && @board.winner != nil)
+      true
+    end
+
+    
+
+
   end
 
   def winning_node?(evaluator)

@@ -1,3 +1,4 @@
+require 'byebug'
 class PolyTreeNode
     attr_reader :value, :parent, :children
 
@@ -113,28 +114,27 @@ class KnightPathFinder
     end
 
     def build_move_tree
-        queue = new_move_positions(@root_node.value).all {|pos| KnightPathFinder.new(pos)} #[a bunch positions] we want thesto be root's children
+        queue = new_move_positions(@root_node.value).map {|pos| PolyTreeNode.new(pos)} #[a bunch positions] we want thesto be root's children
+        queue.each {|root_kids| @root_node.add_child(root_kids)}
 
-        until queue.empty?
+        until queue.empty?    
+            top_pos = queue.shift
+            #debugger
+            knight = KnightPathFinder.new(top_pos.value)
+            knight.considered_positions += @considered_positions
             
-            top_pos = queue.shift #[first valid pos]
-            
-            
-         #[all prev considered]
-            # @root_node.add_child(child.root_node) #root node now parent of child
+            kids = knight.new_move_positions(top_pos.value)
+            kid_instances = kids.map {|kid| PolyTreeNode.new(kid)}
+            kid_instances.each {|kid| top_pos.add_child(kid)}
 
-            # child.root_node.parent = self
-            # # queue += child.build_move_tree #
-
-
-            #a two kids b c
-            #iterate through the top+pos kids and set their parent
-            
-            parent.each {|pos| }
-            queue += child.new_move_positions(child.root_node.value)
+            queue += kid_instances
         end
 
         #queue
     end
 
 end
+
+new_knight = KnightPathFinder.new([0,0])
+new_knight.build_move_tree
+p new_knight.root_node

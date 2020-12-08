@@ -1,4 +1,5 @@
 class Employee
+    attr_reader :salary
 
     def initialize(name, title, salary, boss)
         @name = name    
@@ -16,9 +17,15 @@ end
 
 class Manager < Employee
 
+    attr_reader :employees
+
     def initialize(name, title, salary, boss)
         super
         @employees = []
+    end
+
+    def input_employee(employee)
+        @employees << employee
     end
 
     def bonus(multiplier)
@@ -29,14 +36,19 @@ class Manager < Employee
         end
         @bonus = multiplier * employee_salary
     end
+    
 
 end
 
-ned = Manager.new("Ned", "Founder", 1000000000, nil)
-darren = Manager.new("Darren", "TA Manager", 78000, "Ned")
-shawna = Employee.new("Shawna", "TA", 12000, "Darren")
-david = Employee.new("David", "TA", 10000, "Darren")
+Ned = Manager.new("Ned", "Founder", 1000000000, nil)
+Darren = Manager.new("Darren", "TA Manager", 78000, Ned)
+Shawna = Employee.new("Shawna", "TA", 12000, Darren)
+David = Employee.new("David", "TA", 10000, Darren)
 
-p ned.bonus(5)
-p darren.bonus(4)
-p david.bonus(3)
+Ned.input_employee(Darren)
+Darren.input_employee(Shawna)
+Darren.input_employee(David)
+p Darren.employees.length
+p Ned.bonus(5)
+p Darren.bonus(4)
+p David.bonus(3)

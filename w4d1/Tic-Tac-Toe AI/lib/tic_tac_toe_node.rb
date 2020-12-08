@@ -29,13 +29,13 @@ class TicTacToeNode
     if @board.over? && @board.winner == evaluator
       return true 
     elsif @board.over? && @board.winner != evaluator
-      false
+      return false
     end
 
     if evaluator == @next_move_mark
-      return self.children.all? { |child_node| child_node.losing_node?(@next_move_mark) }
+      return self.children.all? { |child_node| child_node.winning_node?(@next_move_mark) }
     else
-      return self.children.any? { |child_node| child_node.losing_node?(evaluator) }
+      return self.children.any? { |child_node| child_node.winning_node?(evaluator) }
     end
   end
 

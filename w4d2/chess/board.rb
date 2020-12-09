@@ -15,9 +15,6 @@ class Board
         row.map {|piece| piece.color} 
       end
     end
-
-
-
     test_rows.each do |row|
       p row
     end
@@ -30,6 +27,20 @@ class Board
 
   def []=(pos, value)
     @rows[pos[0]][pos[1]] = value
+  end
+
+  def move_piece(color, start_pos, end_pos)
+    row_start, col_start = start_pos
+    row_end, col_end = end_pos
+    raise "No piece here" if @rows[row_start][col_start] == nil
+    raise "Out of bounds" if row_end < 0 || row_end > 7
+    raise "Out of bounds" if col_end < 0 || col_end > 7
+    raise "Same color piece here" if @rows[row_end][col_end] != nil && @rows[row_end][col_end].color == color 
+    piece = @rows[row_start][col_start]
+    @rows[row_end][col_end] = piece
+    piece.pos = end_pos
+    @rows[row_start][col_start] = nil
+
   end
 
 

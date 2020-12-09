@@ -1,6 +1,9 @@
 require_relative 'piece.rb'
-
+require 'singleton'
+require 'byebug'
 class Board
+  include Singleton
+
   def initialize
     @rows = Array.new(8){Array.new(8)}
     @null_piece = nil   #come back to this... singleton
@@ -8,14 +11,14 @@ class Board
   end
 
   def test_print
-    test_rows = @rows.map do |row|
-      if row.any? {|el| el == nil}
-        row
-      else
-        row.map {|piece| piece.color} 
+    test_rows = Array.new(8){Array.new(8)}
+    @rows.each_with_index do |row,i1|
+      row.each_with_index do |el, i2|
+        #debugger
+        test_rows[i1][i2] = (el.color.to_s + " " + el.class.to_s) if el != nil
       end
     end
-    test_rows.each do |row|
+    test_rows.each_with_index do |row|
       p row
     end
     return nil

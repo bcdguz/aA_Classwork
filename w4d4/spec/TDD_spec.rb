@@ -59,9 +59,9 @@ describe Array do
 end
 
 describe Hanoi do
+    subject (:hanoi) {Hanoi.new}
     describe "#initialize" do
         it "creates instance variable of board" do
-            hanoi = Hanoi.new
             expect(hanoi.board).to eq(Array.new(3) {[]})
         end
     end
@@ -78,6 +78,24 @@ describe Hanoi do
             user_input = @stdin.gets
             expect(user_input).to eq('1')
         end
-
+        context "when the disk is moved" do 
+            it "should move a disk based on input" do 
+                input = [0, 2]
+                disk = hanoi.board[0].shift
+                expect(hanoi.board[0]).not_to include(disk)
+            end
+            it "move disk to correct end" do
+                input = [0, 2]
+                disk = hanoi.board[0].shift
+                expect(hanoi.board[2][0]).to eq(disk)
+            end
+        end
     end
+    describe "#won?" do
+        it "expects last array to have all the disks in order" do
+            expect(hanoi.board[2]).to eq([1, 2, 3, 4])
+        end 
+    end
+
+
 end

@@ -56,3 +56,15 @@ end
 # #move will take the top disk(front el from array) and place it in the top of the end(front of the array)
 # #won? all disks are in array[2] and sorted from 1..4
 
+class Hanoi
+    attr_accessor :board
+    def initialize
+        @board = Array.new(3) {Array.new() }
+        store_tower
+    end
+    
+    def store_tower
+        @board[0] += [1, 2, 3, 4]
+    end
+
+end

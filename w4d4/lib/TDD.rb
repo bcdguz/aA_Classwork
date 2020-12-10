@@ -28,4 +28,21 @@ class Array
         transpose
     end
 
+    def stock_picker
+        pair = []
+        sum = 0
+        (0...self.length - 1).each do |i|
+            (i+1...self.length).each do |j|
+                temp = []
+                if self[j] - self[i] > sum 
+                    sum = self[j] - self[i]
+                    temp << self[i]
+                    temp << self[j] #pair = [something]
+                    pair = temp
+                end
+               
+            end
+        end
+        pair
+    end
 end

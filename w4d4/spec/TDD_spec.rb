@@ -1,3 +1,4 @@
+
 require "rspec"
 require "TDD"
 
@@ -22,7 +23,7 @@ describe Array do
         end
     end
 
-    describe "my_transpose" do
+    describe "#my_transpose" do
         it "should take a 2-D array that is a square" do
             transpose = [
             [0, 1, 2],
@@ -30,5 +31,31 @@ describe Array do
             [6, 7, 8]]
             expect(transpose.length).to eq(transpose[0].length)
         end
+
+        it "should transpose rows and cols" do
+            transpose = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8]]
+            expect(transpose.my_transpose).to eq([[0, 3, 6],
+                                                [1, 4, 7],
+                                                [2, 5, 8]])
+        end
+
     end
+
+    describe "#stock_picker" do
+        # [25, 5, 10, 15] => [5, 15]
+        it "returns most profitable pair" do
+            pairs = [25, 5, 10, 15]
+            expect(pairs.stock_picker).to eq([5, 15])
+        end
+        it "does not sell stock before buying" do
+            pairs = [25, 5, 10, 15]
+            output = pairs.stock_picker
+            expect(pairs.index(output[0])).to be < (pairs.index(output[1]))
+        end
+    end
+
+
 end

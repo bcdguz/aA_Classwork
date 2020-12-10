@@ -14,4 +14,18 @@ class Array
         end
         pairs
     end
+
+    def my_transpose
+        transpose = []
+        
+        self.each_with_index do |row, i|
+            new_row = []
+            self.each_with_index do |el, j|
+                new_row << self[j][i]
+            end
+            transpose << new_row
+        end
+        transpose
+    end
+
 end

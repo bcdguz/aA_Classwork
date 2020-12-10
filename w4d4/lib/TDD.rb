@@ -46,3 +46,13 @@ class Array
         pair
     end
 end
+
+# class Hanoi
+# board 2D  array with length 3 and each value is an array
+# @board[0] fill it from (1..4)
+#[1, 2, 3, 4]
+# you can pick only from the top(front of array) and 1 disk at the time
+# #move user will type in a start and an end, check is that valid input
+# #move will take the top disk(front el from array) and place it in the top of the end(front of the array)
+# #won? all disks are in array[2] and sorted from 1..4
+

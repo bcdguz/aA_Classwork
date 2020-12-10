@@ -56,6 +56,19 @@ describe Array do
             expect(pairs.index(output[0])).to be < (pairs.index(output[1]))
         end
     end
+end
+
+describe Hanoi do
+    describe "#initialize" do
+        it "creates instance variable of board" do
+            hanoi = Hanoi.new
+            expect(hanoi.board).to eq(Array.new(3) {[]})
+        end
+
+    end
+
+
+
 
 
 end

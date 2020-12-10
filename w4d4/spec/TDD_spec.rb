@@ -64,11 +64,20 @@ describe Hanoi do
             hanoi = Hanoi.new
             expect(hanoi.board).to eq(Array.new(3) {[]})
         end
-
     end
 
+    describe "#store_tower" do 
+        it "stores first arr with discs" do 
+            expect(hanoi.board[0]).to eq([1,2,3,4])
+        end
+    end
 
+    describe "#move" do 
+        it "should ask user to choose a stack number from start to end" do
+            allow($stdin).to recieve(:gets).and_return('1')
+            user_input = @stdin.gets
+            expect(user_input).to eq('1')
+        end
 
-
-
+    end
 end

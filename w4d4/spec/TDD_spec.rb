@@ -90,12 +90,21 @@ describe Hanoi do
                 expect(hanoi.board[2][0]).to eq(disk)
             end
         end
+        it "can't put a larger disk on a smaller disk" do 
+
+            expect {}
+        end
     end
     describe "#won?" do
         it "expects last array to have all the disks in order" do
-            expect(hanoi.board[2]).to eq([1, 2, 3, 4])
+            hanoi.board[2] = [1,2,3,4]
+            expect(hanoi.won?).to be true
         end 
     end
 
 
 end
+
+
+# [1,2][3][4]
+# i = 0

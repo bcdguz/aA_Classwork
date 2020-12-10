@@ -67,4 +67,7 @@ class Hanoi
         @board[0] += [1, 2, 3, 4]
     end
 
+    def won?
+        @board[2] == [1,2,3,4] && @board[0].empty?
+    end
 end

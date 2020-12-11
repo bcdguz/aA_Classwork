@@ -70,4 +70,22 @@ class Hanoi
     def won?
         @board[2] == [1,2,3,4] && @board[0].empty?
     end
+
+    def valid_move?(idx1, idx2)
+        @board[idx1][0] < @board[idx2][0]
+    end
+
+    def move # "1 2"
+
+        user_input = gets.chomp.split(' ').map { |el| el.to_i }
+
+        
+    end
 end
+
+#move
+#ask user for input two i values
+#input gets,chomp [two i]
+
+#valid move?(idx1, idx2)
+#

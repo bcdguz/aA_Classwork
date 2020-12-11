@@ -73,11 +73,11 @@ describe Hanoi do
     end
 
     describe "#move" do 
-        it "should ask user to choose a stack number from start to end" do
-            allow($stdin).to recieve(:gets).and_return('1')
-            user_input = @stdin.gets
-            expect(user_input).to eq('1')
-        end
+        # it "should ask user to choose a stack number from start to end" do
+        #     allow($stdin).to recieve(:gets).and_return('1')
+        #     user_input = @stdin.gets
+        #     expect(user_input).to eq('1')
+        # end
         context "when the disk is moved" do 
             it "should move a disk based on input" do 
                 input = [0, 2]
@@ -90,13 +90,35 @@ describe Hanoi do
                 expect(hanoi.board[2][0]).to eq(disk)
             end
         end
+
     end
     
     describe "#won?" do
         it "expects last array to have all the disks in order" do
-            expect(hanoi.board[2]).to eq([1, 2, 3, 4])
+            hanoi.board[2] = [1,2,3,4]
+            expect(hanoi.won?).to be true
         end 
     end
-
+    describe "#valid_move?" do 
+        context "is valid" do
+            it "return true if current disk is smaller than than disk in the pile" do
+                hanoi.board[0][0] = 2
+                hanoi.board[2][0] = 3
+                expect(hanoi.valid_move?(0,2)).to be true 
+            end
+        end
+        context "is not valid" do
+            it "return false if current disk is greater than disk in the pile" do
+                hanoi.board[0][0] = 3
+                hanoi.board[2][0] = 1
+                expect(hanoi.valid_move?(0,2)).to be false                
+            end
+        end
+    end
+    
 
 end
+
+
+# [1,2][3][4]
+# i = 0

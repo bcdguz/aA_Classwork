@@ -68,6 +68,7 @@ describe Hanoi do
 
     describe "#store_tower" do 
         it "stores first arr with discs" do 
+            hanoi.board[0] += [1, 2, 3, 4]
             expect(hanoi.board[0]).to eq([1,2,3,4])
         end
     end
@@ -116,6 +117,11 @@ describe Hanoi do
         end
     end
     
+    describe "#play" do
+        it "calls on #move" do
+        expect(hanoi.play).should_receive(:move)
+        end
+    end
 
 end
 

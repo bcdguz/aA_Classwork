@@ -91,6 +91,7 @@ describe Hanoi do
             end
         end
     end
+    
     describe "#won?" do
         it "expects last array to have all the disks in order" do
             expect(hanoi.board[2]).to eq([1, 2, 3, 4])

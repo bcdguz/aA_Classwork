@@ -60,11 +60,19 @@ class Hanoi
     attr_accessor :board
     def initialize
         @board = Array.new(3) {Array.new() }
-        store_tower
     end
     
     def store_tower
         @board[0] += [1, 2, 3, 4]
+    end
+
+    def play
+        store_tower
+        playing = true
+        while playing
+            move
+            playing = false if won?
+        end
     end
 
     def won?
@@ -72,13 +80,19 @@ class Hanoi
     end
 
     def valid_move?(idx1, idx2)
+        return true if @board[idx2][0] == nil
         @board[idx1][0] < @board[idx2][0]
     end
 
     def move # "1 2"
-
-        user_input = gets.chomp.split(' ').map { |el| el.to_i }
-
+        input = true
+        while input
+            puts "Enter start pile and end-pile idx (Ex: 1 2)"
+            user_input = gets.chomp.split(' ').map { |el| el.to_i }
+            input = false if valid_move?(user_input[0], user_input[1])    
+        end
+        current_disk = @board[user_input[0]].shift
+        @board[user_input[1]].unshift(current_disk)
         
     end
 end
@@ -89,3 +103,5 @@ end
 
 #valid move?(idx1, idx2)
 #
+hanoi = Hanoi.new
+

@@ -39,13 +39,12 @@ end
 
 def hash_map(arr, target)
   sums = {}
-  arr.each_with_index { |num,idx| sums[num] = idx }
-  arr.each_with_index do |num,i|
+  arr.each_with_index do |num, idx|
     diff = target - num
-    return true if sums[diff] != nil && sums[diff] != i
+    return true if sums[diff]
+    sums[num] = idx
   end
   false
- # sums.values.any? { |value| sums.has_key?(value) }
 end
 
 arr = [0, 1, 5, 7]

@@ -58,8 +58,8 @@ def large_neighbors
     (select
         population
       from
-        countries
+        countries AS c1
       where
-        population > 3 * population)
+        population > 3 * #subquerry)
   SQL
 end

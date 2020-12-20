@@ -16,19 +16,7 @@ require_relative './sqlzoo.rb'
 
 def example_select_with_subquery
   execute(<<-SQL)
-    SELECT
-      name
-    FROM
-      countries
-    WHERE
-      population > (
-        SELECT
-          population
-        FROM
-          countries
-        WHERE
-          name='Romania'
-        )
+
   SQL
 end
 
@@ -36,18 +24,19 @@ def larger_than_russia
   # List each country name where the population is larger than 'Russia'.
   execute(<<-SQL)
 
-    select
+    SELECT
       name
-    from 
+    FROM
       countries
-    where
-      population > 
-                  (select
-                    population
-                  from 
-                    countries
-                  where
-                    name = 'Russia');
+    WHERE
+    population >
+                (SELECT
+                  population
+                FROM
+                  countries
+                WHERE
+                  name = 'Russia');
+
   SQL
 end
 
@@ -55,21 +44,19 @@ def richer_than_england
   # Show the countries in Europe with a per capita GDP greater than
   # 'United Kingdom'.
   execute(<<-SQL)
-    select
+    SELECT
       name
-    from
+    FROM
       countries
-    where
-      continent = 'Europe' and gdp > 
-                                    (select
-                                      gdp 
-                                    from 
-                                      countries 
-                                    where
-                                      name = 'United Kingdom');
-
-
-
+    WHERE
+      continent = 'Europe' AND
+      (gdp/population) >  
+                  (SELECT
+                    (gdp/population) AS per_capita_gdp
+                  FROM
+                    countries
+                  WHERE
+                    name = 'United Kingdom');
   SQL
 end
 
@@ -77,20 +64,19 @@ def neighbors_of_certain_b_countries
   # List the name and continent of countries in the continents containing
   # 'Belize', 'Belgium'.
   execute(<<-SQL)
-    select
+    SELECT
       name, continent
-    from
+    FROM
       countries
-    where
-      continent in 
+    WHERE
+      continent IN 
+                (SELECT
+                  continent
+                FROM
+                  countries
+                WHERE
+                  name IN ('Belize', 'Belgium'));
 
-          (select
-            continent
-          from
-            countries
-          where
-            name in ('Belize', 'Belgium')
-          );
   SQL
 end
 
@@ -98,28 +84,15 @@ def population_constraint
   # Which country has a population that is more than Canada but less than
   # Poland? Show the name and the population.
 
-
   execute(<<-SQL)
-    select
+    SELECT
       name, population
-    from
+    FROM
       countries
-    where
-      population > 
-          (select 
-            population
-          from
-            countries
-          where
-            name = 'Canada')
-            and 
-            population < 
-                        (select 
-                        population
-                      from
-                        countries
-                      where
-                        name = 'Poland');
+    WHERE
+      population > (SELECT population FROM countries WHERE name = 'Canada')
+      AND
+      population < (SELECT population FROM countries WHERE name = 'Poland');
   SQL
 end
 
@@ -129,18 +102,7 @@ def sparse_continents
   # population.
   # Hint: Sometimes rewording the problem can help you see the solution.
   execute(<<-SQL)
-  select 
-    name, continent, population
-  from
-    countries
-  where
-    continent not in
-                    (select
-                        continent
-                      from 
-                        countries
-                      where
-                        population > 25000000);
+
 
   SQL
 end

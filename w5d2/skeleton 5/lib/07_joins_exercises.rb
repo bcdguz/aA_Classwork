@@ -24,16 +24,7 @@ require_relative './sqlzoo.rb'
 
 def example_join
   execute(<<-SQL)
-    SELECT
-      *
-    FROM
-      movies
-    JOIN
-      castings ON movies.id = castings.movie_id
-    JOIN
-      actors ON castings.actor_id = actors.id
-    WHERE
-      actors.name = 'Sean Connery'
+
   SQL
 end
 

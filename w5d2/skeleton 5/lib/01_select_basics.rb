@@ -11,14 +11,7 @@
 require_relative './sqlzoo.rb'
 
 def example_select
-  execute(<<-SQL)
-    SELECT
-      population
-    FROM
-      countries
-    WHERE
-      name = 'France'
-  SQL
+
 end
 
 def select_population_of_germany
@@ -28,7 +21,7 @@ def select_population_of_germany
     FROM
       countries
     WHERE
-      name = 'Germany'
+      name = 'Germany';
   SQL
 end
 
@@ -37,11 +30,11 @@ def per_capita_gdp
   # the area is over 5,000,000 km^2
   execute(<<-SQL)
     SELECT
-      name, (gdp / population) AS Per_Gdp
+      name, (gdp/population) AS per_capita_gdp
     FROM
       countries
     WHERE
-      area > 5000000
+      area > 5000000;
   SQL
 end
 
@@ -54,7 +47,7 @@ def small_and_wealthy
     FROM
       countries
     WHERE
-      area < 2000 and gdp > 5000000000;
+      area < 2000 AND gdp > 5000000000;
   SQL
 end
 
@@ -62,7 +55,7 @@ def scandinavia
   # Show the name and the population for 'Denmark', 'Finland', 'Norway', and
   # 'Sweden'
   execute(<<-SQL)
-    SELECT
+    SELECT 
       name, population
     FROM
       countries
@@ -89,10 +82,10 @@ def just_the_right_size
   # BETWEEN allows range checking - note that it is inclusive.
   execute(<<-SQL)
     SELECT
-      name, (area/1000) AS area
-    FROM
+      name, (area/1000) AS sqr_kil
+    FROM 
       countries
     WHERE
-      area > 200000 and area < 250000;
+      area BETWEEN 200000 AND 250000;
   SQL
 end

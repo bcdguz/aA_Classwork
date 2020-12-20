@@ -135,15 +135,19 @@ def prolific_actors
   # starring roles.
   execute(<<-SQL)
     SELECT
-      name
+      actors.name
     FROM
       actors
-    JOIN castings
-      ON actors.id = castings.actor_id
+    JOIN
+      castings ON castings.actor_id = actors.id
+    WHERE
+      castings.ord = 1
+    GROUP BY
+      actors.name
     HAVING
-      COUNT(castings.ord = 1) >= 15
+      COUNT(*) >= 15
     ORDER BY
-      name;
+      actors.name;
   SQL
 end
 
@@ -152,7 +156,7 @@ def films_by_cast_size
   # in the cast (descending), then by title (ascending).
   execute(<<-SQL)
     SELECT
-      title
+      title, COUNT(DISTINCT castings.actor_id) AS actor_count
     FROM
       movies
     JOIN castings
@@ -160,9 +164,9 @@ def films_by_cast_size
     WHERE
       yr = 1978
     GROUP BY
-      COUNT(castings.actor_id)
+      movies.id
     ORDER BY
-      COUNT(castings.actor_id) DESC, title ASC;
+      COUNT(castings.actor_id) DESC, movies.title ASC;
   SQL
 end
 

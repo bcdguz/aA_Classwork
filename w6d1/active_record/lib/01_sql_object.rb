@@ -4,19 +4,32 @@ require 'active_support/inflector'
 # of this project. It was only a warm up.
 
 class SQLObject
+
+  # def attributes
+  #   @attributes ||= Hash.new
+  # end
+
   def self.columns
-    # ...
+    return @cols if @cols
+    @cols = DBConnection.execute2(<<-SQL)
+      SELECT
+        *
+      FROM
+        #{table_name}
+    SQL
+
+    @cols[0].map {|name| name.to_sym}
   end
 
   def self.finalize!
   end
 
   def self.table_name=(table_name)
-    # ...
+    @table_name = table_name
   end
 
   def self.table_name
-    # ...
+    self.to_s.tableize
   end
 
   def self.all

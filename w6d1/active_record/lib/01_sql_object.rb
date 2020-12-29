@@ -23,9 +23,7 @@ class SQLObject
         attributes[column] 
       end
 
-      col_name = column.to_s
-
-      define_method("#{col_name}=") do |val|
+      define_method("#{column}=") do |val|
         attributes[column] = val
       end
     end
@@ -54,8 +52,11 @@ class SQLObject
   def initialize(params = {})
     params.each do |key,value|
       attr_name = key.to_sym
-      raise "unkown attribute '#{attr_name}'" if !self.class.columns.include?(attr_name)
-      self.send("#{attr_name}=",value)
+      if self.class.columns.include?(attr_name)
+        self.send("#{attr_name}=",value)
+      else  
+        raise "unkown attribute '#{attr_name}'"
+      end
     end
   end
 

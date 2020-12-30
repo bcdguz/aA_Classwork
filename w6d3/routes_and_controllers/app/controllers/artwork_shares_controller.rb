@@ -1,10 +1,10 @@
 class ArtworkSharesController < ApplicationController
 
     def create
-        artworkshare = ArtworkShare.new(artwork_params)
+        artworkshare = ArtworkShare.new(artwork_share_params)
         # replace the `artwork_attributes_here` with the actual attribute keys
         if artworkshare.save
-            render json: artwork
+            render json: artworkshare
           else
             render json: artworkshare.errors.full_messages, status: :unprocessable_entity
         end

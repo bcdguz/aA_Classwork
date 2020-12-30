@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.new(username: 'Chippy')
-user2 = User.new(username: 'Potato')
+User.destroy_all
+Artwork.destroy_all
+ArtworkShare.destroy_all
 
-artwork1 = Artwork.new(title: 'Rainbow', artist_id: 1, img_url: 'pretty.com')
-artwork2 = Artwork.new(title: 'Foods', artist_id: 2, img_url: 'fatty.com')
+user1 = User.create(username: 'Chippy')
+user2 = User.create(username: 'Potato')
 
-artwork_share1 = ArtworkShare.new(artwork_id: 1, viewer_id: 2)
-artwork_share2 = ArtworkShare.new(artwork_id: 2, viewer_id: 1)
+artwork1 = Artwork.create(title: 'Rainbow', artist_id: user1.id, img_url: 'pretty.com')
+artwork2 = Artwork.create(title: 'Foods', artist_id: user2.id, img_url: 'fatty.com')
+
+artwork_share1 = ArtworkShare.create(artwork_id: artwork1.id, viewer_id: user2.id)
+artwork_share2 = ArtworkShare.create(artwork_id: artwork2.id, viewer_id: user1.id)

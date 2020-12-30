@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
     def index
+      if params[:query]
+        render json: User.where('username LIKE ?', params[:query])
+      else
         render json: User.all
+      end
+      # In UsersController#index check if a query is present in the request params. 
+      # If it is, use that query to filter the users returned by the index action. 
+      # If there is no query, just return all users as usual.
     end
 
     def create

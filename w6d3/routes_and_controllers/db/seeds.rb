@@ -9,6 +9,7 @@
 User.destroy_all
 Artwork.destroy_all
 ArtworkShare.destroy_all
+Comment.destroy_all
 
 user1 = User.create(username: 'Chippy')
 user2 = User.create(username: 'Potato')
@@ -18,3 +19,6 @@ artwork2 = Artwork.create(title: 'Foods', artist_id: user2.id, img_url: 'fatty.c
 
 artwork_share1 = ArtworkShare.create(artwork_id: artwork1.id, viewer_id: user2.id)
 artwork_share2 = ArtworkShare.create(artwork_id: artwork2.id, viewer_id: user1.id)
+
+comment1 = Comment.create(artwork_id: artwork1.id, user_id: user2.id, body: 'Pretty colors')
+comment2 = Comment.create(artwork_id: artwork2.id, user_id: user1.id, body: 'Makes me hungry!')

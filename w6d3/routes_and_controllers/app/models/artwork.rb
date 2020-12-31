@@ -30,6 +30,8 @@ class Artwork < ApplicationRecord
         class_name: :Comment,
         dependent: :destroy
 
+    has_many :likes, as: :likeable
+
     has_many :shared_viewers,
         through: :artwork_shares,
         source: :viewer

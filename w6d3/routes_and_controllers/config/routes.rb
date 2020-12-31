@@ -16,13 +16,20 @@ Rails.application.routes.draw do
   resources :artwork_shares, only:[:create, :destroy]
 
   resources :comments, only:[:create, :destroy, :index]
+
+  resources :likes, only:[:destroy]
   # /users/:user_id/artworks
   resources :users do
     resources :artworks, only:[:index]
     resources :comments, only:[:index]
   end
 
+  resources :comments do
+    resources :likes, only:[:index, :create]
+  end
+
   resources :artworks do
     resources :comments, only:[:index]
+    resources :likes, only:[:index, :create]
   end
 end

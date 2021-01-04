@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
         if @user
             login(@user)
-            # redirect_to 
+            redirect_to cats_url
         else
             render :new
         end

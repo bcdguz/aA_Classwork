@@ -17,6 +17,10 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    has_many :cats,
+        foreign_key: :user_id,
+        class_name: :Cat
+
     def ensure_session_token
         self.session_token ||= SecureRandom::urlsafe_base64
     end

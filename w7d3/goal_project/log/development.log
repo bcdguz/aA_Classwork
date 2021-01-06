@@ -384,3 +384,10 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/users/new" for ::1 at 2021-01-06 17:26:10 -0600
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+

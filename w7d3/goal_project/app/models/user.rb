@@ -7,6 +7,9 @@ class User < ApplicationRecord
     attr_reader :password
 
     #SPIRE
+    has_many :goals,
+        foreign_key: :user_id,
+        class_name: :Goal
 
     def self.find_by_credentials(username,password) 
         user = User.find_by(username: username)

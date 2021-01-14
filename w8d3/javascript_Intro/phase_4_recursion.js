@@ -35,23 +35,39 @@ function exponent(base, exp) {
 // console.log(exponent(3.0, 0))
 // start w/ 0
 function fibonacci(n) {
-    if (n <= 1) {
-        return 1;
-    } else {
-        return fibonacci(n-1) + fibonacci(n-2);
-    }
+  if (n <= 1) {
+    return 1;
+  } else {
+    return fibonacci(n-1) + fibonacci(n-2);
+  }
 }
 
 // console.log(fibonacci(1))
 
-function deepDub(arr) {
-    if (Array.isArray(arr) === false) {
-        return arr;
+function deepDup(arr) {
+  let dup = []
+
+  for (let i = 0; i < arr.length; i++){
+    if (Array.isArray(arr[i])) {
+      dup.push(deepDup(arr[i]))
     } else {
-        arr.forEach(deepDub)
+      dup.push(arr[i])
     }
+  }
+  return dup
+
+  // if (Array.isArray(arr) === false) {
+  //     return arr;
+  // } else {
+  //     arr.forEach(deepDub)
+  // }
 }
 
+// arr = [12,'3213', [321321, '32131']]
+// arr1 = deepDup(arr)
+
+// arr[2][1] = 4
+// console.log(arr)
+// console.log(arr1)
 
 
-console.log(Array.isArray([1,2,3]))

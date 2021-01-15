@@ -68,10 +68,23 @@ function askIfGreaterThan(el1, el2, callback) {
     // reader.close();
 }
 
-askIfGreaterThan(3, 4, (ele) => {
-    console.log(ele)
-})
+// askIfGreaterThan(3, 4, (ele) => {
+//     console.log(ele)
+// })
 
-// function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
+function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
+    if (i < arr.length-1){
+        askIfGreaterThan(arr[i], arr[i+1],(isGreaterThan) => {
+            if (isGreaterThan){
+                [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+                innerBubbleSortLoop(arr, i + 1, true, outerBubbleSortLoop);
+            }else {
+                innerBubbleSortLoop(arr, i + 1, false, outerBubbleSortLoop);
+            }
+        })
+    }else if (i === arr.length - 1) {
+        outerBubbleSortLoop(madeAnySwaps);
+    }
+}
 
-// }
+innerBubbleSortLoop([1,7,5], 0, false, () => {console.log("In outer bubble sort")})

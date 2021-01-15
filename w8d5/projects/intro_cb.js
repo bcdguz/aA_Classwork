@@ -38,10 +38,40 @@ const reader = readline.createInterface({
 
 function addNumbers(sum, numsLeft, cb){
     if (numsLeft === 0){
-        cb(sum)
+        cb(sum);
+        reader.close();
+        return;
     }
-    reader.question("Input a number to add", (num) => {
-        sum += parseInt(num)
-        console.log(`Partial sum:${sum}`)
+    reader.question("Input a number to add: ", (num) => {
+        sum += parseInt(num);
+        console.log(`Partial sum:${sum}`);
+        addNumbers(sum, numsLeft - 1, cb);
     })
 }
+
+// addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`));
+
+// function absurdBubbleSort(arr, sortcb) {
+//     let sorted = false;
+
+
+// }
+
+function askIfGreaterThan(el1, el2, callback) {
+    reader.question(`Is ${el1} > ${el2}`, (input) => {
+        if (input === 'yes') {
+            callback(true);
+        } else {
+            callback(false);
+        }
+    })
+    // reader.close();
+}
+
+askIfGreaterThan(3, 4, (ele) => {
+    console.log(ele)
+})
+
+// function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
+
+// }

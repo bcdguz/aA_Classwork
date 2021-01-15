@@ -51,11 +51,24 @@ function addNumbers(sum, numsLeft, cb){
 
 // addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`));
 
-// function absurdBubbleSort(arr, sortcb) {
-//     let sorted = false;
+function absurdBubbleSort(arr, sortcb) {
+    function outerBubbleSortLoop(madeAnySwaps) {
+        if (madeAnySwaps) {
+            innerBubbleSortLoop(arr, 0, false, outerBubbleSortLoop);
+        } else {
+            sortcb(arr);
+        }
+    }
+
+    outerBubbleSortLoop(true);
+}
+
+// absurdBubbleSort([3, 2, 1], function (arr) {
+//     console.log("Sorted array: " + JSON.stringify(arr));
+//     reader.close();
+// });
 
 
-// }
 
 function askIfGreaterThan(el1, el2, callback) {
     reader.question(`Is ${el1} > ${el2}`, (input) => {
@@ -87,4 +100,30 @@ function innerBubbleSortLoop(arr, i, madeAnySwaps, outerBubbleSortLoop) {
     }
 }
 
-innerBubbleSortLoop([1,7,5], 0, false, () => {console.log("In outer bubble sort")})
+// innerBubbleSortLoop([1,7,5], 0, false, () => {console.log("In outer bubble sort")})
+
+Function.prototype.myBind = function(context) {
+    return () => {
+        this.apply(context);
+    }
+}
+
+class Lamp {
+    constructor() {
+        this.name = "a lamp";
+    }
+}
+
+const turnOn = function () {
+    console.log("Turning on " + this.name); //this is the window (no .name)
+};
+
+const lamp = new Lamp();
+
+turnOn(); // should not work the way we want it to
+
+const boundTurnOn = turnOn.bind(lamp);
+const myBoundTurnOn = turnOn.myBind(lamp);
+
+boundTurnOn(); // should say "Turning on a lamp"
+myBoundTurnOn(); // should say "Turning on a lamp"

@@ -120,10 +120,55 @@ const turnOn = function () {
 
 const lamp = new Lamp();
 
-turnOn(); // should not work the way we want it to
+// turnOn(); // should not work the way we want it to
 
-const boundTurnOn = turnOn.bind(lamp);
-const myBoundTurnOn = turnOn.myBind(lamp);
+// const boundTurnOn = turnOn.bind(lamp);
+// const myBoundTurnOn = turnOn.myBind(lamp);
 
-boundTurnOn(); // should say "Turning on a lamp"
-myBoundTurnOn(); // should say "Turning on a lamp"
+// boundTurnOn(); // should say "Turning on a lamp"
+// myBoundTurnOn(); // should say "Turning on a lamp"
+
+Function.prototype.myThrottle = function (interval){
+    let tooSoon = false;
+    return () => {
+        if (!tooSoon){
+            tooSoon = true;
+            setTimeout(()=> { tooSoon = false}, interval);
+            this();
+        }
+    }
+};
+
+
+class Neuron {
+    fire() {
+        console.log("Firing!");
+    }
+}
+
+const neuron = new Neuron();
+
+// const interval = setInterval(() => {
+//     neuron.fire();
+// }, 10);
+
+
+// clearInterval(interval);
+
+
+neuron.fire = neuron.fire.myThrottle(1000);
+
+const interval = setInterval(() => {
+    neuron.fire();
+}, 10);
+
+
+// class Neuron {
+//     constructor() {
+//         this.fire = this.fire.myThrottle(500);
+//     }
+
+//     fire() {
+//         console.log("Firing!");
+//     }
+// }

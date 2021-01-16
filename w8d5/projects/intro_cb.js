@@ -156,11 +156,11 @@ const neuron = new Neuron();
 // clearInterval(interval);
 
 
-neuron.fire = neuron.fire.myThrottle(1000);
+// neuron.fire = neuron.fire.myThrottle(1000);
 
-const interval = setInterval(() => {
-    neuron.fire();
-}, 10);
+// const interval = setInterval(() => {
+//     neuron.fire();
+// }, 10);
 
 
 // class Neuron {
@@ -172,3 +172,58 @@ const interval = setInterval(() => {
 //         console.log("Firing!");
 //     }
 // }
+
+
+Function.prototype.myDebounce = function(interval) {
+    //declare timeout
+    let timeout;
+    let currentFunction = this;
+    return function() {
+        let fncall = function() {
+            //timeout var set to null
+            timeout = null;
+            //invoke original function
+            currentFunction();
+        }
+        //timeout = setTimeout(fncall, interval)
+        timeout = setTimeout(fncall, interval);
+    }
+}
+
+class SearchBar {
+    constructor() {
+        this.query = "";
+
+        this.type = this.type.bind(this);
+        this.search = this.search.bind(this);
+    }
+
+    type(letter) {
+        this.query += letter;
+        this.search();
+    }
+
+    search() {
+        console.log(`searching for ${this.query}`);
+    }
+}
+
+const searchBar = new SearchBar();
+
+const queryForHelloWorld = () => {
+    searchBar.type("h");
+    searchBar.type("e");
+    searchBar.type("l");
+    searchBar.type("l");
+    searchBar.type("o");
+    searchBar.type(" ");
+    searchBar.type("w");
+    searchBar.type("o");
+    searchBar.type("r");
+    searchBar.type("l");
+    searchBar.type("d");
+};
+
+searchBar.search = searchBar.search.myDebounce(500);
+
+queryForHelloWorld();

@@ -1,0 +1,49 @@
+ul.board {
+    display: flex;
+    flex-wrap: wrap;
+    height: 606px;
+    width: 606px;
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-self: center;
+}
+
+ul.board > li {
+    list-style-type: none;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    padding: 0px;
+    margin: 0px;
+    background-color: gray;
+}
+
+ul.board > li:hover {
+    background-color: yellow;
+}
+
+ul.board > li.placeMoveX {
+    background-color: white;
+    line-height: 150px;
+    text-align: center;
+    font-size: 200px;
+    color: red;
+}
+
+ul.board > li.placeMoveO {
+    background-color: white;
+    line-height: 150px;
+    text-align: center;
+    font-size: 200px;
+    color: blue;
+}
+
+ul.board > li.win {
+    background-color: green;
+    text-align: center;
+    color: purple;
+    font-size: 48px;
+    word-wrap: break-word;
+}

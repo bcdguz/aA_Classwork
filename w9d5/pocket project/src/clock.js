@@ -1,3 +1,5 @@
+import { htmlGenerator } from "./warmup";
+
 class Clock {
     constructor() {
         // 1. Create a Date object.
@@ -13,9 +15,11 @@ class Clock {
     }
     printTime() {
         // Format the time in HH:MM:SS
-        const timeString = [this.hours, this.minutes, this.seconds].join(“: ”);
+        const timeString = [this.hours, this.minutes, this.seconds];
         // Use console.log to print it.
-        console.log(timeString);
+        // const clockDiv = document.getElementById('clock');
+        htmlGenerator(timeString, clockElement);
+        // console.log(timeString);
     }
     _tick() {
         // 1. Increment the time by one second.
@@ -42,4 +46,6 @@ class Clock {
         this.hours = (this.hours + 1) % 24;
     }
 }
-export const clock = new Clock();
+let clockElement = document.getElementById('clock');
+const clock = new Clock();
+export default Clock; //ES 6 way 

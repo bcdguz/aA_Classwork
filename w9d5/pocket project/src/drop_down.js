@@ -11,7 +11,26 @@ const dogs = {
 };
 
 export const dogLinkCreator = (dogs) => {
+  let completedDogs = [];
   for (const [key,value] of Object.entries(dogs)) {
-    let completedDogs = [];
+    let aTag = document.createElement('a');
+    aTag.innerHTML = key;
+    aTag.href = value;
+    let liTag = document.createElement("li");
+    liTag.classList.add("dog-link");
+    liTag.append(aTag);
+    completedDogs.push(liTag);
   }
+  return completedDogs;
 } 
+
+export const attachDogLinks = (dogs) => {
+  let dogLinks = dogLinkCreator(dogs);
+  let uL = document.querySelector(".drop-down-dog-list");
+  console.log(uL);
+  dogLinks.forEach((link) => {
+    uL.append(link);
+  })
+}
+
+attachDogLinks(dogs);

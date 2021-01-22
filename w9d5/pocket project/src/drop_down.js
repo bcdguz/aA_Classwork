@@ -1,3 +1,4 @@
+import { htmlGenerator } from "./warmup";
 
 const dogs = {
   "Corgi": "https://www.akc.org/dog-breeds/cardigan-welsh-corgi/",
@@ -9,3 +10,8 @@ const dogs = {
   "French Bulldog": "https://www.akc.org/dog-breeds/french-bulldog/" 
 };
 
+export const dogLinkCreator = (dogs) => {
+  for (const [key,value] of Object.entries(dogs)) {
+    let completedDogs = [];
+  }
+} 

@@ -18,7 +18,7 @@ class Clock {
         const timeString = [this.hours, this.minutes, this.seconds];
         // Use console.log to print it.
         // const clockDiv = document.getElementById('clock');
-        htmlGenerator(timeString, clockElement);
+        htmlGenerator(timeString.join(":"), clockElement);
         // console.log(timeString);
     }
     _tick() {

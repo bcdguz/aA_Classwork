@@ -33,4 +33,21 @@ export const attachDogLinks = (dogs) => {
   })
 }
 
+const selectDog = document.querySelector(".dog-link");
+
+
+function handleEnter(selectDog) {
+  selectDog.addEventListener("mouseenter", function (e) {
+    e.removeClass(".dog-link");
+  })
+}
+
+function handleLeave(selectDog) {
+  selectDog.addEventListener("mouseleave", function (e) {
+    e.addClass(".dog-link");
+  })
+}
+
+handleEnter(selectDog);
+handleLeave(selectDog);
 attachDogLinks(dogs);

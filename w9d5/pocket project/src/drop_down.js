@@ -18,6 +18,7 @@ export const dogLinkCreator = (dogs) => {
     aTag.href = value;
     let liTag = document.createElement("li");
     liTag.classList.add("dog-link");
+    liTag.classList.add("dog-link-hidden");
     liTag.append(aTag);
     completedDogs.push(liTag);
   }
@@ -33,21 +34,24 @@ export const attachDogLinks = (dogs) => {
   })
 }
 
-const selectDog = document.querySelector(".dog-link");
+// const selectDog = document.querySelector(".dog-link");
 
 
-function handleEnter(selectDog) {
+function handleEnter() {
+  const selectDog = document.querySelector(".drop-down-dog-list");
   selectDog.addEventListener("mouseenter", function (e) {
-    e.removeClass(".dog-link");
+    e.target.classList.remove("dog-link-hidden");
   })
 }
 
-function handleLeave(selectDog) {
+function handleLeave() {
+  const selectDog = document.querySelector(".drop-down-dog-list");
+  console.log(selectDog);
   selectDog.addEventListener("mouseleave", function (e) {
-    e.addClass(".dog-link");
+    e.target.classList.add("dog-link-hidden");
   })
 }
 
-handleEnter(selectDog);
-handleLeave(selectDog);
 attachDogLinks(dogs);
+handleLeave();
+handleEnter();

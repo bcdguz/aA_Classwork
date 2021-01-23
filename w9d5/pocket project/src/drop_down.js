@@ -36,22 +36,33 @@ export const attachDogLinks = (dogs) => {
 
 // const selectDog = document.querySelector(".dog-link");
 
+const selectDog = document.querySelector(".drop-down-dog-nav")
+const dogUL = document.querySelector(".drop-down-dog-list")
 
 function handleEnter() {
-  const selectDog = document.querySelector(".drop-down-dog-list");
   selectDog.addEventListener("mouseenter", function (e) {
-    e.target.classList.remove("dog-link-hidden");
+    console.log('in')
+    
+    Array.from(dogUL.children).forEach((dog) => {
+      dog.classList.remove("dog-link-hidden");
+    })
   })
 }
+
+
+
 
 function handleLeave() {
-  const selectDog = document.querySelector(".drop-down-dog-list");
-  console.log(selectDog);
   selectDog.addEventListener("mouseleave", function (e) {
-    e.target.classList.add("dog-link-hidden");
+    console.log('leaving')
+    Array.from(dogUL.children).forEach((dog) => {
+      dog.classList.add("dog-link-hidden");
+    })
   })
 }
 
+
+
 attachDogLinks(dogs);
-handleLeave();
 handleEnter();
+handleLeave();

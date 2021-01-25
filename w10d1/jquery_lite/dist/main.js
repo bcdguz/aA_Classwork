@@ -15,7 +15,7 @@
   \************************************/
 /***/ ((module) => {
 
-eval("class DOMNodeCollection {\n    constructor(arr) {\n        // debugger\n        this.$arr = arr;\n    }\n}\n\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+eval("class DOMNodeCollection {\n    constructor(arr) {\n        // debugger\n        this.$arr = arr;\n    }\n\n    html(inner = null){\n        if (inner !== null) {\n            this.$arr.forEach((node) => {\n                node.innerHTML = inner;\n            })\n        } else {\n            return this.$arr[0].innerHTML;\n        }\n    }\n\n    empty(){\n        this.html(\"\");\n    }\n\n    append(arg){\n        this.$arr.forEach((node) => {\n            node.append(arg);\n        })\n    }\n}\n\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
 
 /***/ })
 

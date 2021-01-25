@@ -15,7 +15,7 @@
   \************************************/
 /***/ ((module) => {
 
-eval("class DOMNodeCollection {\n    constructor(arr) {\n        // debugger\n        this.$arr = arr;\n    }\n\n    html(inner = null){\n        if (inner !== null) {\n            this.$arr.forEach((node) => {\n                node.innerHTML = inner;\n            })\n        } else {\n            return this.$arr[0].innerHTML;\n        }\n    }\n\n    empty(){\n        this.html(\"\");\n    }\n\n    append(arg){\n        this.$arr.forEach((node) => {\n            node.append(arg);\n        })\n    }\n}\n\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+eval("class DOMNodeCollection {\n    constructor(arr) {\n        // debugger\n        this.$arr = arr;\n    }\n\n    html(inner = null){\n        if (inner !== null) {\n            this.$arr.forEach((node) => {\n                node.innerHTML = inner;\n            })\n        } else {\n            return this.$arr[0].innerHTML;\n        }\n    }\n\n    empty(){\n        this.html(\"\");\n    }\n\n    append(arg){\n        this.$arr.forEach((node) => {\n            node.append(arg);\n        })\n    }\n\n    addClass(str){\n        this.$arr.forEach((node) => {\n            node.classList.add(str);\n        })\n    }\n\n    removeClass(str) {\n        this.$arr.forEach((node) => {\n            node.classList.remove(str);\n        })\n    }\n\n    attr() {\n        if (arguments.length === 2) {\n            const ele = this.$arr.map((node) => {\n                return node.setAttribute(arguments[0],arguments[1]);\n            })\n            return ele;\n        } else if (arguments.length === 1) {\n            const ele = this.$arr.map((node) => {\n                // console.log(arguments);\n                // debugger\n                return node.getAttribute(arguments[0]);\n            })\n            return ele[0];\n        }\n    }\n}\n\nmodule.exports = DOMNodeCollection;\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
 
 /***/ })
 
@@ -49,7 +49,7 @@ eval("class DOMNodeCollection {\n    constructor(arr) {\n        // debugger\n  
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("const DOMNodeCollection = __webpack_require__(/*! ./dom_node_collection */ \"./src/dom_node_collection.js\")\n\nfunction $l(selector){\n    if(selector instanceof HTMLElement) {\n        const DOMElement = new DOMNodeCollection([selector]);\n        return DOMElement;\n    } else {\n        const nodeList = document.querySelectorAll(selector);\n        // let elementArr = Array.from(nodeList);\n        let elementArr = Array.prototype.slice.call(nodeList)\n        return new DOMNodeCollection(elementArr);\n    }\n}\n\nwindow.$l = $l;\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const DOMNodeCollection = __webpack_require__(/*! ./dom_node_collection */ \"./src/dom_node_collection.js\")\n\nfunction $l(selector){\n    if(selector instanceof HTMLElement) {\n        const DOMElement = new DOMNodeCollection([selector]);\n        return DOMElement;\n    } else {\n        const nodeList = document.querySelectorAll(selector);\n        // let elementArr = Array.from(nodeList);\n        let elementArr = Array.from(nodeList)\n        return new DOMNodeCollection(elementArr);\n    }\n}\n\nwindow.$l = $l;\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 })();
 
 /******/ })()

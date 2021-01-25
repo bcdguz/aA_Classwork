@@ -7,7 +7,7 @@ function $l(selector){
     } else {
         const nodeList = document.querySelectorAll(selector);
         // let elementArr = Array.from(nodeList);
-        let elementArr = Array.prototype.slice.call(nodeList)
+        let elementArr = Array.from(nodeList)
         return new DOMNodeCollection(elementArr);
     }
 }

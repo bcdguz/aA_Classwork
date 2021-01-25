@@ -10,6 +10,6 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-eval("window.$l\nconst elementList = document.querySelector(\"li\");\nconsole.log(elementList);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("function $l(selector){\n  const nodeList = document.querySelectorAll(selector);\n  // let elementArr = Array.from(nodeList);\n  let elementArr = Array.prototype.slice.call(nodeList)\n  return elementArr;\n}\n\nwindow.$l = $l;\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 /******/ })()
 ;

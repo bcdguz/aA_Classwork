@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./root.jsx";
+import Clock from "./clock";
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById('root');

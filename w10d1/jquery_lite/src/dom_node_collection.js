@@ -81,6 +81,11 @@ class DOMNodeCollection {
         return new DOMNodeCollection(ele);
     }
 
+    remove(){
+        this.$arr.forEach((node) => {
+            node.remove();
+        })
+    }
     
 }
 

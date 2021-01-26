@@ -22,7 +22,7 @@ class Clock extends React.Component {
             <>
                 <h1>Clock</h1>
                 <h2>{this.state.time.getHours()}:{this.state.time.getMinutes()}
-                :{this.state.time.getSeconds()} {this.state.time.getTimezoneOffset()}</h2>
+                :{this.state.time.getSeconds()} PDT</h2>
                 <h2>{this.state.time.toDateString()}</h2>
             </>
         );

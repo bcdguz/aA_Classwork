@@ -46,11 +46,37 @@ class DOMNodeCollection {
             const ele = this.$arr.map((node) => {
                 // console.log(arguments);
                 // debugger
-                return node.getAttribute(arguments[0]);
+                return node.attr(arguments[0]);
             })
             return ele[0];
         }
     }
+
+    children(){
+        let kids = [];
+        this.$arr.forEach((node)=>{
+            // debugger
+            kids.push(...node.children)
+        })
+        return new DOMNodeCollection(kids)
+    }
+
+    parent(){
+        let parent = [];
+        this.$arr.forEach((node)=>{
+            // debugger
+            parent.push(node.parentNode)
+        })
+        return new DOMNodeCollection(parent)
+    }
+
+    find(selector){
+        const nodeList = document.querySelectorAll(selector);
+        let elementArr = Array.from(nodeList)
+        return new DOMNodeCollection(elementArr);
+    }
+
+    
 }
 
 module.exports = DOMNodeCollection;

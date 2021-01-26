@@ -71,9 +71,14 @@ class DOMNodeCollection {
     }
 
     find(selector){
-        const nodeList = document.querySelectorAll(selector);
-        let elementArr = Array.from(nodeList)
-        return new DOMNodeCollection(elementArr);
+        let ele = [];
+        this.$arr.forEach((node)=>{
+            const nodeList = node.querySelectorAll(selector);
+            let elementArr = Array.from(nodeList);
+            ele.push(...elementArr);
+        })
+        if (!ele.length) return null;
+        return new DOMNodeCollection(ele);
     }
 
     

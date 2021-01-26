@@ -86,6 +86,14 @@ class DOMNodeCollection {
             node.remove();
         })
     }
+
+    on(){
+        this.$arr.forEach((node) => {
+            node.addEventListener('click', () => {
+                node.classList.add('bcgr');
+            })
+        })
+    }
     
 }
 

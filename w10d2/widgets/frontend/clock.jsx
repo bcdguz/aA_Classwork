@@ -21,9 +21,19 @@ class Clock extends React.Component {
         return (
             <>
                 <h1>Clock</h1>
-                <h2>{this.state.time.getHours()}:{this.state.time.getMinutes()}
-                :{this.state.time.getSeconds()} PDT</h2>
-                <h2>{this.state.time.toDateString()}</h2>
+                <div className="time">
+                    <div>
+                        <h2>Time</h2>
+                        <h2>Date</h2>
+                        
+                    </div>
+                    <div>
+                        <h2>{this.state.time.getHours()}:{this.state.time.getMinutes()}
+                        :{this.state.time.getSeconds()} PDT</h2>
+                        <h2>{this.state.time.toDateString()}</h2>
+                    </div>
+                    
+                </div>
             </>
         );
     }

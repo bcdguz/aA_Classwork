@@ -1,3 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+.time{
+    display: flex;
+    justify-content: space-around;
+    background-color: orange;
+}
+h1{
+    text-align: center;
+}

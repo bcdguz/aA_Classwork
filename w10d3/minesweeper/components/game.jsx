@@ -1,9 +1,11 @@
 import React from 'react';
-import Minesweeper from '../minesweeper';
+import * as Minesweeper from '../minesweeper';
+import Board from './board';
 
 class Game extends React.Component {
     constructor(props) {
         super(props);
+        debugger
         this.state = { board: new Minesweeper.Board() };
         this.updateGame = this.updateGame.bind(this);
     }

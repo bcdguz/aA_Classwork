@@ -10,7 +10,7 @@ class Board extends React.Component {
             return(
                 row.map((tile, idx) => {
                     return(
-                    <Tile tileObj={tile} updateGame={this.props.updateGame} key={idx}/>
+                    <Tile tileObj={tile} updateGame={this.props.updateGame} key={idx} size={grid.gridSize}/>
                     )
                 })
             )

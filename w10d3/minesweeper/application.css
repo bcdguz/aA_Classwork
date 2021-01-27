@@ -5,8 +5,8 @@
     border: 5px black; */
     list-style-type: none;
     border: 1px solid black;
-    width: 200px;
-    height: 200px;
+    width: 20px;
+    height: 20px;
     padding: 0px;
     margin: 0px;
     text-align: center;
@@ -26,9 +26,9 @@ body {
     flex-wrap: wrap; */
     display: flex;
     flex-wrap: wrap;
-    height: 606px;
-    width: 606px;
-    border: 1px solid black;
+    height: 220px;
+    width: 220px;
+    /* border: 1px solid black; */
     padding: 0px;
     margin: 0px;
     justify-content: center;

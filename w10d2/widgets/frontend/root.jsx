@@ -8,7 +8,6 @@ const Root = () => {
         <Clock />
         <Tabs array={[{"title": 'one',"content": 'I am the first'},
          {"title": 'two',"content": 'I am the second'}, {"title": 'three',"content": 'I am the third'}]}/>
-          
         <Weather />
     </div>);
 }

@@ -5,18 +5,19 @@ import Tile from './tile';
 class Board extends React.Component {
 
     render() {
-        const arr = this.props.board.map((row, idx) => {
+        let grid = this.props.board.grid;
+        const arr = grid.map((row) => {
             return(
                 row.map((tile, idx) => {
                     return(
-                    <Tile tileObj={tile} updateGame={this.props.updateGame} />
+                    <Tile tileObj={tile} updateGame={this.props.updateGame} key={idx}/>
                     )
                 })
             )
         })
         return (
             <div>
-                
+                {arr}
             </div>
         );
     }

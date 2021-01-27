@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Header = ({title,content}) => {
+const Header = (props) => {
+    // debugger
     return(
         <>
-            <ul>
-                {title}
+            <ul onClick={ () => props.handleClick(props.id)} value={props.id}>
+                {props.title}
             </ul>
             <article>
-                {content}
+                {props.content}
             </article>
         </>
     )

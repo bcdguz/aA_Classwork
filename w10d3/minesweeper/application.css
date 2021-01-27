@@ -1,0 +1,36 @@
+.tile {
+    /* float: left;
+    width: 15px;
+    height: 15px;
+    border: 5px black; */
+    list-style-type: none;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    background-color: gray;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-weight: bold;
+}
+
+.board {
+    /* margin: 30px auto;
+    display: flex;
+    width: 300px;
+    flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
+    height: 606px;
+    width: 606px;
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-self: center;
+}

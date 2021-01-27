@@ -7,16 +7,18 @@ class Tile extends React.Component {
     render() {
         //logic here
         const _tile = this.props.tileObj;
-        let tileState = '';
+        let tileState = <div className="tile">blank </div>;
         if(_tile.bombed) {
-            tileState = 'bomb';
+            tileState = <div className="tile">&#x1F4A3;</div>
         } else if(_tile.explored) {
-            tileState = _tile.adjacentBombCount();
-        } else {
-            tileState = 'flag';
+            tileState = <div className="tile">_tile.adjacentBombCount()</div>;
+        } else if(_tile.flagged){
+            tileState = <div className="tile">&#x26F3;</div>;
         }
         return(
-            <h1>T</h1>
+            <>
+                {tileState}
+            </>
         );
     };
 };

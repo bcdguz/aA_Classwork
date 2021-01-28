@@ -2,23 +2,32 @@ import React from 'react';
 import * as Minesweeper  from '../minesweeper';
 
 class Tile extends React.Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            className: 'tile'
+        }
+    }
     
-    render() {
+    handleClick (e) {
         const _tile = this.props.tileObj;
-        let tileState = <div className="tile">blank</div>;
+        let tileClass = '';
         if(_tile.bombed) {
-            tileState = <div className="tile"></div>
+            titleClass = 'bombed';
             //&#x1F4A3;
         } else if(_tile.explored) {
-            tileState = <div className="tile">_tile.adjacentBombCount()</div>;
+            tileClass = 'explored';
         } else if(_tile.flagged){
-            tileState = <div className="tile"></div>;
+            tileClass = 'flagged';
             //&#x26F3;
         }
+        this.setState({ className: tileClass})
+    }
+    
+    render() {
         return(
             <>
-                <div className="tile" onClick={}></div>
+                <div className={this.state.className} onClick={}></div>
             </>
         );
     };

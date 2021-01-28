@@ -12,7 +12,8 @@
     margin: 0px;
     text-align: center;
     background-color: gray;
-    
+    border-style: inset;
+    border-style: outset;
 }
 
 body {
@@ -38,5 +39,13 @@ body {
 }
 
 .bombed {
+    color: red;
+}
 
+.flagged {
+    color: blue;
+}
+
+.explored {
+    color: green;
 }

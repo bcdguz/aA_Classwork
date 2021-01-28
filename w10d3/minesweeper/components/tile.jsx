@@ -7,9 +7,11 @@ class Tile extends React.Component {
         this.state = {
             className: 'tile'
         }
+        this.handleClick = this.handleClick.bind(this);
     }
     
     handleClick (e) {
+        //keycode event
         const _tile = this.props.tileObj;
         let tileClass = '';
         if(_tile.bombed) {
@@ -21,13 +23,14 @@ class Tile extends React.Component {
             tileClass = 'flagged';
             //&#x26F3;
         }
-        this.setState({ className: tileClass})
+        this.setState({ className: tileClass});
+        this.props.updateGame( ,)
     }
     
     render() {
         return(
             <>
-                <div className={this.state.className} onClick={}></div>
+                <div className={this.state.className} onKeyDown={this.handleClick}></div>
             </>
         );
     };

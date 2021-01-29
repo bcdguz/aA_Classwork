@@ -9,7 +9,8 @@ export const TodoList = (props) => {
             <ul>
                 {props.allTodos.map((todo) => {
                     return (
-                        <TodoListItem key={todo.id} todo={todo}/>
+                        <TodoListItem key={todo.id} todo={todo}
+                         receiveTodo={props.receiveTodo} removeTodo={props.removeTodo}/> //passing correctly?
                     )
                 })
             }

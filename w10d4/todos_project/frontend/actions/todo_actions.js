@@ -1,7 +1,14 @@
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
 export const RECEIVE_TODO = "RECEIVE_TODO";
-export const DELETE_TODO = "DELETE_TODO";
-export const DELETE_TODOS = "DELETE_TODOS";
+export const REMOVE_TODO = "REMOVE_TODO";
+// export const DELETE_TODOS = "DELETE_TODOS";
+
+export const removeTodo = (id) => {
+    return {
+        type: REMOVE_TODO,
+        id: id
+    }
+}
 
 export const receiveTodos = (todos) => {
     return {
@@ -17,5 +24,6 @@ export const receiveTodo = (todo) => {
     }
 }
 
+window.removeTodo = removeTodo;
 window.receiveTodo = receiveTodo;
 window.receiveTodos = receiveTodos;

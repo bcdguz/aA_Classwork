@@ -1,5 +1,6 @@
 import React from 'react';
 import { TodoDetailView } from './todo_detail_view';
+import TodoDetailViewContainer from './todo_detail_view_container'
 
 class TodoListItem extends React.Component{
     constructor (props) {
@@ -40,7 +41,7 @@ class TodoListItem extends React.Component{
     render () {
         let todoDetail = <div></div>
         if (this.state.detail) {
-            todoDetail = <TodoDetailView todo = {this.props.todo}/>
+            todoDetail = <TodoDetailViewContainer todo = {this.props.todo}/>
         }
 
         return (

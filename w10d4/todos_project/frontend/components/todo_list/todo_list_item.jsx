@@ -1,34 +1,52 @@
 import React from 'react';
 
-export const TodoListItem = (props) => { 
-    // debugger
-    const handleClick = (e) => {
-        e.preventDefault();
-        props.removeTodo(props.todo.id)
+class TodoListItem extends React.Component{
+    constructor (props) {
+        super(props)
+        this.state = {
+            detail: false
+        }
+        this.handleDone = this.handleDone.bind(this);
     }
+    // debugger
 
-    const handleDone = (e) => {
+    handleDone(e) {
         e.preventDefault(); //{ title: props.todo.title, }
         let bool = true;
-        if(props.todo.done) {
+        if(this.props.todo.done) {
             bool = false;
         }
         const flipTodo = {      //recieveTodo needs a whole todo obj;
-            title: props.todo.title,
-            body: props.todo.body,
-            id: props.todo.id,
+            title: this.props.todo.title,
+            body: this.props.todo.body,
+            id: this.props.todo.id,
             done: bool
         }
-        props.recieveTodo(flipTodo);
+        this.props.recieveTodo(flipTodo);
     }
 
-    return (
-        <>
-            <li>
-                Title: {props.todo.title}
-            </li>
-            <button onClick={handleClick}>Delete</button>
-            <button onClick={handleDone}>Done</button>
-        </>
+    handleDetail(e) {
+        e.preventDefault();
+        if (this.state.detail) {
+            this.setState({ detail: false })
+        } else {
+            this.setState({ detail: true})
+        }
+
+        
+    }
+    render () {
+        return (
+            <>
+                <li onClick={this.handleDetail}>
+                    Title: {this.props.todo.title}
+                </li>
+                {/* write a conditional statement around this to render the TodoList */}
+                <TodoList /> 
+                <button onClick={this.handleDone}>Done</button>
+            </>
         )
+    }
 }
+
+export default TodoListItem;

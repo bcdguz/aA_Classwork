@@ -10,7 +10,7 @@ export const TodoDetailView = (props) => {
         <div>
             <ul>
                 <li>{props.todo.body}</li>
-                <li>{props.todo.done}</li>
+                <li>{props.todo.done.toString()}</li>
                 <button onClick={handleClick}>Delete</button>
             </ul>
         </div>

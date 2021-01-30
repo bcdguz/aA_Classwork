@@ -1,4 +1,5 @@
 import React from 'react';
+import { TodoDetailView } from './todo_detail_view';
 
 class TodoListItem extends React.Component{
     constructor (props) {
@@ -7,6 +8,7 @@ class TodoListItem extends React.Component{
             detail: false
         }
         this.handleDone = this.handleDone.bind(this);
+        this.handleDetail = this.handleDetail.bind(this);
     }
     // debugger
 
@@ -22,7 +24,7 @@ class TodoListItem extends React.Component{
             id: this.props.todo.id,
             done: bool
         }
-        this.props.recieveTodo(flipTodo);
+        this.props.receiveTodo(flipTodo);
     }
 
     handleDetail(e) {
@@ -36,13 +38,18 @@ class TodoListItem extends React.Component{
         
     }
     render () {
+        let todoDetail = <div></div>
+        if (this.state.detail) {
+            todoDetail = <TodoDetailView todo = {this.props.todo}/>
+        }
+
         return (
             <>
                 <li onClick={this.handleDetail}>
                     Title: {this.props.todo.title}
                 </li>
-                {/* write a conditional statement around this to render the TodoList */}
-                <TodoList /> 
+                {todoDetail}
+                
                 <button onClick={this.handleDone}>Done</button>
             </>
         )

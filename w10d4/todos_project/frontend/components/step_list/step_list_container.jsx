@@ -9,9 +9,9 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const mapStateToProps = (state, {todo_id}) => { //todos, steps
+const mapStateToProps = () => { //todos, steps
     return {
-        stepsByTodoId: stepsByTodoId(state, todo_id)
+        stepsByTodoId: (state, todo_id) => stepsByTodoId(state, todo_id)
     }
 }
 

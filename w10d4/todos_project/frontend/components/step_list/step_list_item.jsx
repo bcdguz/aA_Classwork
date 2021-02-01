@@ -13,10 +13,11 @@ class StepListItem extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <div>
-                <li>Title: {this.props.title}</li>
-                <li>Body: {this.props.body}</li>
+                <li>Title: {this.props.step.title}</li>
+                <li>Body: {this.props.step.body}</li>
                 <button onClick={this.handleClick}>Delete Step</button>
             </div>
         )

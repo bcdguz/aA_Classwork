@@ -1,4 +1,5 @@
 import React from 'react'
+import StepListContainer from '../step_list/step_list_container';
 
 export const TodoDetailView = (props) => {
     const handleClick = (e) => {
@@ -13,6 +14,7 @@ export const TodoDetailView = (props) => {
                 <li>{props.todo.done.toString()}</li>
                 <button onClick={handleClick}>Delete</button>
             </ul>
+            <StepListContainer todo={props.todo}/>
         </div>
     )
 }

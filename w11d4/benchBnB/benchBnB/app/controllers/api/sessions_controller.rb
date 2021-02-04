@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
         if logout!
             render {}
         else
-            
-        redirect_to new_session_url
+            render json:["No current user"], status: 404
+        end
     end
 end

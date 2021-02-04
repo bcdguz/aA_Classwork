@@ -11,7 +11,7 @@ class Api::SessionsController < ApplicationController
         else  
             @user = User.new
             flash.now[:errors] = { base:["Invalid username or password"] }
-            render :new
+            render :new, status: 401
         end
     end
 

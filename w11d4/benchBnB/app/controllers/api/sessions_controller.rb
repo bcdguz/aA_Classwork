@@ -7,13 +7,15 @@ class Api::SessionsController < ApplicationController
       render json: ['Nope. Wrong credentials!'], status: 401
     else
       login!(@user)
-      render 'api/users/show';
+      render :show;
     end
   end
 
     def destroy
-        if logout!
-            render {}
+        
+        if current_user
+            logout!
+            render json: {}
         else
             render json:["No current user"], status: 404
         end

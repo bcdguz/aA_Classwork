@@ -6,10 +6,10 @@ export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 // Regular action creatiors
 
-const receiveCurrentUser = (currentUser) => {
+const receiveCurrentUser = (user) => {
     return {
         type: RECEIVE_CURRENT_USER,
-        currentUser
+        user
     }
 }
 

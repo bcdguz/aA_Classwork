@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Greeting extends React.Component {
     constructor(props) {
@@ -6,20 +7,23 @@ class Greeting extends React.Component {
     }
 
     render () {
-        let renderThis = <div></div>
+        // debugger
+        let renderConditional = <div></div>
         if (this.props.currentUser) {
-            renderThis = <div>
+            renderConditional = <>
                 <h2>Welcome! {this.props.currentUser.username}</h2>
                 <button onClick={this.props.logout}>Logout</button>
-            </div>
+            </>
         } else {
-            renderThis = <div>
+            renderConditional = <>
                 <Link to="/signup">Sign Up</Link>
                 <Link to="/login">Log In</Link>
-            </div>
+            </>
         }
         return (
-            {renderThis}
+            <div>
+                {renderConditional}
+            </div>
         )
     }
 }

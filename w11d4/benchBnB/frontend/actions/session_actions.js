@@ -27,3 +27,33 @@ const receiveErrors = (errors) => {
 }
 
 //thunk action creators
+
+export const login = (user) => (dispatch) => {
+    return APIUtil.login(user)
+        .then(res => {
+            return dispatch(receiveCurrentUser(res))
+        })
+        .catch(errors => {
+            return dispatch(receiveErrors(errors))
+        })
+}
+
+export const signup = (user) => (dispatch) => {
+    return APIUtil.signup(user)
+        .then(res => {
+            return dispatch(receiveCurrentUser(res))
+        })
+        .catch(errors => {
+            return dispatch(receiveErrors(errors))
+        })
+}
+
+export const logout = () => (dispatch) => {
+    return APIUtil.logout()
+        .then(() => {
+            return dispatch(logoutCurrentUser())
+        })
+        .catch(errors => {
+            return dispatch(receiveErrors(errors))
+        })
+}

@@ -33,7 +33,7 @@ export const login = (user) => (dispatch) => {
         .then(res => {
             return dispatch(receiveCurrentUser(res))
         })
-        .catch(errors => {
+        .fail(errors => {
             return dispatch(receiveErrors(errors))
         })
 }
@@ -43,7 +43,7 @@ export const signup = (user) => (dispatch) => {
         .then(res => {
             return dispatch(receiveCurrentUser(res))
         })
-        .catch(errors => {
+        .fail(errors => {
             return dispatch(receiveErrors(errors))
         })
 }
@@ -53,7 +53,7 @@ export const logout = () => (dispatch) => {
         .then(() => {
             return dispatch(logoutCurrentUser())
         })
-        .catch(errors => {
+        .fail(errors => {
             return dispatch(receiveErrors(errors))
         })
 }

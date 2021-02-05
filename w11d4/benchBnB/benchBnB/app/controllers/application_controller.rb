@@ -32,8 +32,10 @@ class ApplicationController < ActionController::Base
     end
 
     def require_logged_in
-        unless logged_in? render json:["You must be logged in to do that!"],
+        unless logged_in? 
+            render json:["You must be logged in to do that!"],
             status: :unauthorized
+        end
     end
 
     def user_params

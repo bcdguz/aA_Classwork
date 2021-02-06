@@ -34,7 +34,7 @@ export const login = (user) => (dispatch) => {
             return dispatch(receiveCurrentUser(res))
         })
         .fail(errors => {
-            return dispatch(receiveErrors(errors))
+            return dispatch(receiveErrors(errors.responseJSON))
         })
 }
 
@@ -44,7 +44,7 @@ export const signup = (user) => (dispatch) => {
             return dispatch(receiveCurrentUser(res))
         })
         .fail(errors => {
-            return dispatch(receiveErrors(errors))
+            return dispatch(receiveErrors(errors.responseJSON))
         })
 }
 
@@ -54,6 +54,6 @@ export const logout = () => (dispatch) => {
             return dispatch(logoutCurrentUser())
         })
         .fail(errors => {
-            return dispatch(receiveErrors(errors))
+            return dispatch(receiveErrors(errors.responseJSON))
         })
 }

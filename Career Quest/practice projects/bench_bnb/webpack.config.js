@@ -1,14 +1,16 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-    entry: './frontend/entry.jsx',
+    context: __dirname,
+    entry: './frontend/bench_bnb.jsx',
     output: {
-        filename: './bundle.js',
+        path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
+        filename: 'bundle.js'
     },
     module: {
         rules: [
             {
-                test: [/\.jsx?$/],
+                test: /\.jsx?$/,
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
@@ -21,6 +23,7 @@ module.exports = {
     },
     devtool: 'source-map',
     resolve: {
-        extensions: ['.js', '.jsx', '*']
+        extensions: [".js", ".jsx", "*"]
     }
 };
+

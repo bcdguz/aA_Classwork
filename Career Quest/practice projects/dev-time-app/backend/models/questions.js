@@ -3,21 +3,21 @@ const Schema = mongoose.Schema;
 
 const QuestionSchema = Schema({
     name: {
-        Type: String,
+        type: String,
         required: true
     },
     text: {
-        Type: String,
+        type: String,
         required: true
     },
     repo: {
-        Type: String
+        type: String
     },
     live: {
-        Type: String
+        type: String
     },
     answered: {
-        Type: Boolean,
+        type: Boolean,
         default: false
     },
 }, {

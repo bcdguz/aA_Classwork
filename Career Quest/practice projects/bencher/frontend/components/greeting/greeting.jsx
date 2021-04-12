@@ -5,13 +5,13 @@ const Greeting = (props) => {
     let content = <div></div>;
     if (props.currentUser !== null) {
         content = 
-            <div>
-                <h1>Wellcome {props.currentUser.username}!</h1>
+            <div className="header-signed-in">
+                <h1>Welcome {props.currentUser.username}!</h1>
                 <button onClick={props.logout}>Logout</button>
             </div>
     } else {
         content =
-            <div>
+            <div className="header-signed-out">
                 <Link to="/login">Login</Link>
                 <Link to="/signup">Signup</Link>
             </div>

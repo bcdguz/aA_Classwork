@@ -18,10 +18,7 @@ const LoginComponent = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const user = {username, password};
-        props.login(user).then(() => {
-                setUsername('');
-                setPassword('');
-            });
+        props.login(user);
     }
 
     return (

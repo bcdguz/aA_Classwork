@@ -21,6 +21,10 @@ const LoginComponent = (props) => {
         props.login(user);
     }
 
+    const errors = props.errors.map(error => {
+        return <li key={Date.now()}>{error}</li>
+    })
+
     return (
         <div className='session-form'>
             <form onSubmit={handleSubmit}>
@@ -30,6 +34,7 @@ const LoginComponent = (props) => {
                 onChange={handleChange('password')} value={password} />
                 <button>Login</button>
             </form>
+            <ul>{errors}</ul>
         </div>
     )
 }

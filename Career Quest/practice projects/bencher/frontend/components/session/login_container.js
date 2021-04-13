@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import LoginComponent from "./login";
+import {login} from '../../actions/session_actions';
 
 const mSTP = (state) => {
     return {

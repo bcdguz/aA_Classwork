@@ -1,12 +1,12 @@
 export const fetchAllBenches = () => {
-    $.ajax({
+    return $.ajax({
         method: "GET",
         url: "/api/benches"
     })
 }
 
 export const createBench = (bench) => {
-    $.ajax({
+    return $.ajax({
         method: "POST",
         data: {bench},
         url: "/api/benches"

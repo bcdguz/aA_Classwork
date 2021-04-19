@@ -4,7 +4,7 @@ export const RECEIVE_BENCHES = "RECEIVE_BENCHES";
 
 const receiveBenches = (benches) => {
     return {
-        action: RECEIVE_BENCHES,
+        type: RECEIVE_BENCHES,
         benches
     }
 } 

@@ -1,9 +1,11 @@
 import { fetchBenches } from "../../actions/bench_actions"
 import BenchIndex from './bench_index';
+import {connect} from 'react-redux';
 
 const mSTP = (state) => {
+    
     return {
-        benches: state.entities.benches
+        benches: Object.values(state.entities.benches)
     }
 }
 

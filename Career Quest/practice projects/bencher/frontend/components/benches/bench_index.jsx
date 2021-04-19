@@ -5,14 +5,12 @@ const BenchIndex = (props) => {
     useEffect(() => {
         props.fetchBenches();
     }, []);
-
     
-
     return (
         <ul>
             {props.benches.map(bench => {
                 return (
-                    <BenchIndexItem bench={bench} />
+                    <BenchIndexItem key={bench.id} bench={bench} />
                 )
             })}
         </ul>

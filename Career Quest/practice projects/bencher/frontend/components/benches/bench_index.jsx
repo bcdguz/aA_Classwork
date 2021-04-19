@@ -1,10 +1,11 @@
 import React from 'react';
 
-const benchIndex = (props) => {
+const BenchIndex = (props) => {
+    
 
     return (
         <div></div>
     )
 }
 
-export default benchIndex;
+export default BenchIndex;

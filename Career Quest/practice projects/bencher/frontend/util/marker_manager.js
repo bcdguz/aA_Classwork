@@ -8,7 +8,7 @@ export default class MarkerManager {
         console.log("time to update");
         
         for (let i = 0; i < benches.length; i++) {
-            debugger
+            
             const bench = benches[i];
             if (!this.markers[bench.id]) {
                 this.createMarkerFromBench(bench);

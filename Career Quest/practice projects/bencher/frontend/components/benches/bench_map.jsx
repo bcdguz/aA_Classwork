@@ -4,7 +4,9 @@ import MarkerManager from '../../util/marker_manager';
 const BenchMap = ({benches}) => {
     let mapNode;
     const [markerManager, setMarkerManager] = useState('');
+
     useEffect(() => {
+        //Component did mount
         const mapOptions = {
             center: {lat: 37.7758, lng: -122.435}, //coords for sf
             zoom: 13
@@ -16,7 +18,9 @@ const BenchMap = ({benches}) => {
     }, [])
     
     useEffect(() => {
+        //Update markers whenever new bench props are passed down
         if (markerManager.length === 0) return;
+        debugger
         markerManager.updateMarkers(benches);
     }, [benches])
 

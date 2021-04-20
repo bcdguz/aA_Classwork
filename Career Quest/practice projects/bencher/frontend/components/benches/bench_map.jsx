@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import MarkerManager from '../../util/marker_manager';
 
-const BenchMap = (props) => {
+const BenchMap = ({benches}) => {
     let mapNode;
     let markerManager;
     useEffect(() => {
@@ -12,13 +12,9 @@ const BenchMap = (props) => {
 
         const myMap = new google.maps.Map(mapNode, mapOptions);
         markerManager = new MarkerManager(myMap);
-    }, [])
-
-    useEffect(() => {
-        if (!markerManager) return;
-        markerManager.updateMarkers(props.benches)
-    }, [props.benches])
-
+        markerManager.updateMarkers(benches);
+    }, [benches])
+    
     return (
         <div ref={map => mapNode = map} id='map_container'></div>
     )

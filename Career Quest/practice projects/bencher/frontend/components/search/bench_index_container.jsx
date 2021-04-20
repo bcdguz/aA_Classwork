@@ -1,9 +1,8 @@
 import { fetchBenches } from "../../actions/bench_actions"
-import BenchIndex from './bench_index';
 import {connect} from 'react-redux';
+import Search from "./search";
 
-const mSTP = (state) => {
-    
+const mSTP = (state) => { 
     return {
         benches: Object.values(state.entities.benches)
     }
@@ -15,5 +14,5 @@ const mDTP = () => {
     }
 }
 
-const BenchIndexContainer = connect(mSTP, mDTP)(BenchIndex);
-export default BenchIndexContainer;
+const SearchContainer = connect(mSTP, mDTP)(Search);
+export default SearchContainer;

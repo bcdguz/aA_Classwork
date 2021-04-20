@@ -9730,3 +9730,93 @@ Processing by Api::BenchesController#index as JSON
 Completed 200 OK in 33ms (Views: 22.4ms | ActiveRecord: 7.4ms)
 
 
+Started GET "/" for ::1 at 2021-04-20 15:38:00 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bcdguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 1674ms (Views: 1671.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for ::1 at 2021-04-20 15:38:02 -0700
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (23.0ms)
+Completed 200 OK in 40ms (Views: 26.1ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/" for ::1 at 2021-04-20 15:39:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 434ms (Views: 431.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for ::1 at 2021-04-20 15:39:16 -0700
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (2.0ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.5ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (10.4ms)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-20 15:39:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 381ms (Views: 377.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for ::1 at 2021-04-20 15:39:57 -0700
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (2.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.5ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/index.json.jbuilder (29.0ms)
+Completed 200 OK in 63ms (Views: 60.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2021-04-20 15:40:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 65ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for ::1 at 2021-04-20 15:40:10 -0700
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.1ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (1.5ms)
+  Rendered api/benches/_bench.json.jbuilder (0.2ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (15.2ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/benches" for ::1 at 2021-04-20 15:40:23 -0700
+Processing by Api::BenchesController#index as JSON
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches"[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.5ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (8.6ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+

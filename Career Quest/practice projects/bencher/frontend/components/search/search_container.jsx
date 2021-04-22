@@ -1,6 +1,7 @@
 import { fetchBenches } from "../../actions/bench_actions"
 import {connect} from 'react-redux';
 import Search from "./search";
+import { updateBounds } from "../../actions/filter_actions";
 
 const mSTP = (state) => { 
     return {
@@ -10,6 +11,7 @@ const mSTP = (state) => {
 
 const mDTP = () => {
     return {
+        updateBounds: (bounds) => dispatch(updateBounds(bounds)),
         fetchBenches: () => dispatch(fetchBenches())
     }
 }

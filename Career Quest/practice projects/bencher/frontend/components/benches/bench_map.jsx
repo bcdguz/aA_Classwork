@@ -23,6 +23,7 @@ const BenchMap = ({benches, updateBounds}) => {
             }
             updateBounds(bounds);
         })
+        
         const newMarkerManager = new MarkerManager(myMap);
         setMarkerManager(newMarkerManager);
     }, [])

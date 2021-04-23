@@ -10556,3 +10556,257 @@ NoMethodError - undefined method `[]' for nil:NilClass:
   app/models/bench.rb:4:in `in_bounds'
   app/controllers/api/benches_controller.rb:4:in `index'
 
+Started GET "/" for ::1 at 2021-04-22 17:19:14 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bcdguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 1517ms (Views: 1512.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-22 17:20:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 507ms (Views: 503.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-22 17:26:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 383ms (Views: 379.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-22 17:26:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 385ms (Views: 381.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-22 17:27:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 392ms (Views: 387.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches" for ::1 at 2021-04-22 17:27:03 -0700
+Processing by Api::BenchesController#index as JSON
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/models/bench.rb:4:in `in_bounds'
+  app/controllers/api/benches_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:29:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 351ms (Views: 346.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-22 17:30:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 633ms (Views: 629.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-22 17:31:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 49ms (Views: 43.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-22 17:32:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 365ms (Views: 360.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:32:44 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/models/bench.rb:4:in `in_bounds'
+  app/controllers/api/benches_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:32:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:32:49 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/models/bench.rb:4:in `in_bounds'
+  app/controllers/api/benches_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:33:21 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:33:21 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Completed 500 Internal Server Error in 98668ms (ActiveRecord: 0.0ms)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `in_bounds'
+  app/models/bench.rb:5:in `in_bounds'
+  app/controllers/api/benches_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:35:26 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bcdguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 1237ms (Views: 1231.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:35:28 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Unpermitted parameters: :bounds, :format
+Started GET "/" for ::1 at 2021-04-22 17:38:31 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bcdguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 751ms (Views: 747.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:38:32 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/models/bench.rb:5:in `in_bounds'
+  app/controllers/api/benches_controller.rb:5:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:40:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:40:49 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Unpermitted parameters: :bounds, :format
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/models/bench.rb:5:in `in_bounds'
+  app/controllers/api/benches_controller.rb:5:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:41:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:41:59 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Started GET "/" for ::1 at 2021-04-22 17:44:32 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bcdguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 996ms (Views: 992.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:44:34 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/models/bench.rb:5:in `in_bounds'
+  app/controllers/api/benches_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:44:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:44:43 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/models/bench.rb:5:in `in_bounds'
+  app/controllers/api/benches_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-04-22 17:44:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5Bbounds%5D%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5Bbounds%5D%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5Bbounds%5D%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5Bbounds%5D%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:44:57 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}}
+Started GET "/" for ::1 at 2021-04-22 17:45:57 -0700
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bcdguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 1445ms (Views: 1442.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-04-22 17:45:59 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.3ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.809713098290686') AND (lat > '37.74187133792972') AND (lng > '-122.47791534423827') AND (lng < '-122.3920846557617')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.5ms)
+  Rendered api/benches/_bench.json.jbuilder (0.2ms)
+  Rendered api/benches/index.json.jbuilder (30.5ms)
+Completed 200 OK in 53ms (Views: 34.7ms | ActiveRecord: 13.9ms)
+
+

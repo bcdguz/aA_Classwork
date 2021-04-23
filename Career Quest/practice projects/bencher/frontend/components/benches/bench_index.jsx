@@ -1,10 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import BenchIndexItem from './bench_index_item';
 
 const BenchIndex = (props) => {
-    useEffect(() => {
-        props.fetchBenches();
-    }, []);
     
     return (
         <ul>

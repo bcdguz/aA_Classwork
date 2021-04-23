@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MarkerManager from '../../util/marker_manager';
 
-const BenchMap = ({benches, updateBounds}) => {
+const BenchMap = ({benches, updateFilter}) => {
     let mapNode;
     const [markerManager, setMarkerManager] = useState('');
 
@@ -13,15 +13,15 @@ const BenchMap = ({benches, updateBounds}) => {
         };
 
         const myMap = new google.maps.Map(mapNode, mapOptions);
-        myMap.addListener("bounds_changed", () => {
+        myMap.addListener("idle", () => {
             const latLng = myMap.getBounds();
-            const nE = latLng.getNorthEast();
-            const sW = latLng.getSouthWest();
+            const nE = latLng.getNorthEast().toJSON();
+            const sW = latLng.getSouthWest().toJSON();
             const bounds = {
                 northEast: nE,
                 southWest: sW
             }
-            updateBounds(bounds);
+            updateFilter('bounds', bounds);
         })
         
         const newMarkerManager = new MarkerManager(myMap);

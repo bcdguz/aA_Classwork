@@ -5,10 +5,10 @@ const filterReducer = (state = {bounds:{}}, action) => {
     const newState = Object.assign({}, state);
     switch(action.type) {
         case UPDATE_BOUNDS:
-            newState[bounds] = action.bounds;
+            newState[action.filter] = action.value;
             return newState;
         default:
-            return newState;
+            return state;
     }
 }
 

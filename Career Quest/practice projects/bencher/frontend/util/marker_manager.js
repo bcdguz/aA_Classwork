@@ -16,8 +16,8 @@ export default class MarkerManager {
             .forEach(newBench => this.createMarkerFromBench(newBench, this.handleClick))
 
         Object.keys(this.markers)
-            .filter(benchId => !benchesObj[benchId])
-            .forEach((benchId) => this.removeMarker(this.markers[benchId]))
+            .filter(benchId => !benchObj[benchId])
+            .forEach((benchId) => this.removeMarker(benchId))
     }
 
     createMarkerFromBench(bench) {
@@ -28,8 +28,8 @@ export default class MarkerManager {
         marker.setMap(this.map);
     }
 
-    removeMarker(marker) {
-        this.markers[marker.benchId].setMap(null);
-        delete this.markers[marker.benchId];
+    removeMarker(benchId) {
+        this.markers[benchId].setMap(null);
+        delete this.markers[benchId];
     }
 }

@@ -18,12 +18,18 @@ class Calculator extends React.Component{
     this.setState({num2: e.target.value});
   }
 
+  clearFields(e){
+    e.preventDefault();
+    this.setState({num1: "", num2: ""});
+  }
+
   render(){
     return (
       <div>
         <h1>{this.state.result}</h1>
         <input onChange={this.setNum1} type="text" value={this.state.num1}/>
         <input onChange={this.setNum2} type="text" value={this.state.num2} />
+        <button>Clear</button>
       </div>
     );
   }

@@ -47,10 +47,11 @@ class Calculator extends React.Component{
     const {result, num1, num2} = this.state;
 
     return (
-      <div>
-        <h1>{result}</h1>
-        <input onChange={this.setNum1} type="text" value={num1}/>
-        <input onChange={this.setNum2} type="text" value={num2} />
+      <div className="calc-body">
+        <div className="inputs">
+          <input onChange={this.setNum1} type="text" value={num1}/>
+          <input onChange={this.setNum2} type="text" value={num2} />  
+        </div>
         <div className="operations">
           <button onClick={this.handleOperation}>+</button>
           <button onClick={this.handleOperation}>-</button>
@@ -58,6 +59,7 @@ class Calculator extends React.Component{
           <button onClick={this.handleOperation}>*</button>
         </div>
         <button onClick={this.clearFields}>Clear</button>
+        <h1>{result}</h1>
       </div>
     );
   }

@@ -1,0 +1,18 @@
+.calc-body{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-body * {
+    padding-bottom: 10px;
+}
+
+.operations{
+    display: flex;
+    justify-content: space-between;
+}
+
+.calc-body h1 {
+    align-self: center;
+}

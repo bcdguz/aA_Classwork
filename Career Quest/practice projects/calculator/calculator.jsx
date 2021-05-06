@@ -28,8 +28,8 @@ class Calculator extends React.Component{
   handleOperation(e){
     e.preventDefault;
     const operation = e.currentTarget.innerText;
-    const num1 = this.state.num1;
-    const num2 = this.state.num2;
+    const num1 = parseInt(this.state.num1);
+    const num2 = parseInt(this.state.num2);
     let result;
     if (operation === "+") {
       result = num1 + num2;
@@ -44,11 +44,13 @@ class Calculator extends React.Component{
   }
 
   render(){
+    const {result, num1, num2} = this.state;
+
     return (
       <div>
-        <h1>{this.state.result}</h1>
-        <input onChange={this.setNum1} type="text" value={this.state.num1}/>
-        <input onChange={this.setNum2} type="text" value={this.state.num2} />
+        <h1>{result}</h1>
+        <input onChange={this.setNum1} type="text" value={num1}/>
+        <input onChange={this.setNum2} type="text" value={num2} />
         <div className="operations">
           <button onClick={this.handleOperation}>+</button>
           <button onClick={this.handleOperation}>-</button>

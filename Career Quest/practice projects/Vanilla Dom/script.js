@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const cityInput = document.getElementsByClassName('favorite-input')[0];
   const sfPlaces = document.getElementById('sf-places');
   // --- your code here!
-  const addCity = () => {
+  const addCity = (e) => {
+    e.preventDefault();
     const newLi = document.createElement('li');
-    newLi.innerText = cityInput.nodeValue;
+    newLi.innerText = cityInput.value;
     cityInput.value = "";
     sfPlaces.appendChild(newLi);
   }
@@ -33,7 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // adding new photos
 
   // --- your code here!
+  document.getElementsByClassName('photo-show-button')[0]
+    .addEventListener('click', (e) => {
+      e.preventDefault();
+      const form = document.getElementsByClassName('photo-form-container')[0];
+      if (form.classList.length === 2) {
+        form.classList.remove('hidden');
+      } else {
+        form.classList.add('hidden')
+      }
+  })
 
-
+  const addPhoto = (e) => {
+    e.preventDefault();
+    const input = document.getElementsByClassName('photo-url-input')
+  }
 
 });

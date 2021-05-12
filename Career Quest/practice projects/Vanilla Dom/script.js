@@ -47,7 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const addPhoto = (e) => {
     e.preventDefault();
-    const input = document.getElementsByClassName('photo-url-input')
+    const input = document.getElementsByClassName('photo-url-input')[0];
+    const url = input.value;
+    input.value = '';
+    const newImg = document.createElement('img');
+    newImg.src = url;
+    const newLi = document.createElement('li');
+    newLi.appendChild(newImg);
+    const dogUl = document.querySelector('.dog-photos');
+    dogUl.appendChild(newLi);
   }
 
+  document.querySelector('.photo-url-submit').addEventListener('click', addPhoto);
 });

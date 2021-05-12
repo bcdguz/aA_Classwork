@@ -17,10 +17,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // adding SF places as list items
-
+  const cityInput = document.getElementsByClassName('favorite-input')[0];
+  const sfPlaces = document.getElementById('sf-places');
   // --- your code here!
+  const addCity = () => {
+    const newLi = document.createElement('li');
+    newLi.innerText = cityInput.nodeValue;
+    cityInput.value = "";
+    sfPlaces.appendChild(newLi);
+  }
 
-
+  document.querySelector('.favorite-submit').addEventListener('click', addCity);
+  
 
   // adding new photos
 

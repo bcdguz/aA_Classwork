@@ -4,3 +4,5 @@ class FollowToggle {
         this.followState = el.dataset.initialFollowState;
     }
 }
+
+export default FollowToggle;

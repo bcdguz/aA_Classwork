@@ -28,8 +28,8 @@ class FollowToggle {
         if (this.followState === "unfollowed") {
             $.ajax({
                 method: "POST",
-                url: `/users/${this.userId}/follow`,
-                datatype: 'json'
+                url: `/users/${button.userId}/follow`,
+                dataType: 'json'
             }).then(res => {
                 button.followState = "followed";
                 console.log("followed")
@@ -38,8 +38,8 @@ class FollowToggle {
         } else {
             $.ajax({
                 method: "DELETE",
-                url: `/users/${this.userId}/follow`,
-                datatype: 'json'
+                url: `/users/${button.userId}/follow`,
+                dataType: 'json'
             }).then(res => {
                 button.followState = "followed";
                 console.log("unfollowed")

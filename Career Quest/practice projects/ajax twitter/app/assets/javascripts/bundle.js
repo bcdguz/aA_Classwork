@@ -57,12 +57,16 @@ class FollowToggle {
         e.preventDefault();
         const button = this;
         if (this.followState === "unfollowed") {
+            this.followState = "following";
+            this.render();
             _api_util__WEBPACK_IMPORTED_MODULE_0__.default.followUser(button.userId).then(res => {
                 button.followState = "followed";
-                console.log("followed")
+                console.log("followed");
                 button.render();
             })
         } else {
+            this.followState = "unfollowing";
+            this.render();
             _api_util__WEBPACK_IMPORTED_MODULE_0__.default.unfollowUser(button.userId).then(res => {
                 button.followState = "unfollowed";
                 console.log("unfollowed")
@@ -72,11 +76,23 @@ class FollowToggle {
     }
 
     render() {
-        
-        if (this.followState === "unfollowed") {
-            this.button.innerText = "Follow!";
-        } else {
-            this.button.innerText = "Unfollow!"
+        switch (this.followState) {
+            case 'followed':
+                this.button.disabled = false;
+                this.button.innerText = 'Unfollow!';
+                break;
+            case 'unfollowed':
+                this.button.disabled = false;
+                this.button.innerText = 'Follow!';
+                break;
+            case 'following':
+                this.button.disabled = true;;
+                this.button.innerText = 'Following...';
+                break;
+            case 'unfollowing':
+                this.button.disabled = true;;
+                this.button.innerText = 'Unfollowing...';
+                break;
         }
     }
 }

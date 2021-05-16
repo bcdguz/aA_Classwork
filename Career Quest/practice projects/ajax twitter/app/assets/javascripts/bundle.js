@@ -48,7 +48,6 @@ class FollowToggle {
         this.button = el;
         this.userId = el.dataset.userId;
         this.followState = el.dataset.initialFollowState;
-        this.render = this.render.bind(this);
         this.render();
         this.button.addEventListener('click', (e) => this.handleClick(e));
     }
@@ -109,6 +108,8 @@ class FollowToggle {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _follow_toggle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./follow_toggle */ "./frontend/follow_toggle.js");
+/* harmony import */ var _user_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user_search */ "./frontend/user_search.js");
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -116,7 +117,31 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < followButtons.length; i++) {
         const followToggle = new _follow_toggle__WEBPACK_IMPORTED_MODULE_0__.default(followButtons[i]);
     }
+
+    const searchEl = document.getElementsByClassName('user-search')[0];
+    const searchNav = new _user_search__WEBPACK_IMPORTED_MODULE_1__.default(searchEl);
 })
+
+/***/ }),
+
+/***/ "./frontend/user_search.js":
+/*!*********************************!*\
+  !*** ./frontend/user_search.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+class UserSearch {
+    constructor(el) {
+        this.input = el.children[0];
+        this.ul = el.children[1];
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UserSearch);
 
 /***/ })
 

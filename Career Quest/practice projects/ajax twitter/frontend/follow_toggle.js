@@ -5,7 +5,6 @@ class FollowToggle {
         this.button = el;
         this.userId = el.dataset.userId;
         this.followState = el.dataset.initialFollowState;
-        this.render = this.render.bind(this);
         this.render();
         this.button.addEventListener('click', (e) => this.handleClick(e));
     }

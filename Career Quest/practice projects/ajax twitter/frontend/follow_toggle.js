@@ -1,3 +1,5 @@
+import APIUtil from "./api_util";
+
 class FollowToggle {
     constructor(el) {
         this.button = el;
@@ -12,22 +14,14 @@ class FollowToggle {
         e.preventDefault();
         const button = this;
         if (this.followState === "unfollowed") {
-            $.ajax({
-                method: "POST",
-                url: `/users/${button.userId}/follow`,
-                dataType: 'json'
-            }).then(res => {
+            APIUtil.followUser(button.userId).then(res => {
                 button.followState = "followed";
                 console.log("followed")
                 button.render();
             })
         } else {
-            $.ajax({
-                method: "DELETE",
-                url: `/users/${button.userId}/follow`,
-                dataType: 'json'
-            }).then(res => {
-                button.followState = "followed";
+            APIUtil.unfollowUser(button.userId).then(res => {
+                button.followState = "unfollowed";
                 console.log("unfollowed")
                 button.render();
             })

@@ -2,6 +2,34 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/api_util.js":
+/*!******************************!*\
+  !*** ./frontend/api_util.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+const APIUtil = {
+    followUser: id => APIUtil.changeFollowStatus(id, 'POST'),
+
+    unfollowUser: id => APIUtil.changeFollowStatus(id, 'DELETE'),
+
+    changeFollowStatus: (id, method) => (
+        $.ajax({
+            url: `/users/${id}/follow`,
+            dataType: 'json',
+            method
+        })
+    ),
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (APIUtil);
+
+/***/ }),
+
 /***/ "./frontend/follow_toggle.js":
 /*!***********************************!*\
   !*** ./frontend/follow_toggle.js ***!
@@ -12,6 +40,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
+/* harmony import */ var _api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./api_util */ "./frontend/api_util.js");
+
+
 class FollowToggle {
     constructor(el) {
         this.button = el;
@@ -26,22 +57,14 @@ class FollowToggle {
         e.preventDefault();
         const button = this;
         if (this.followState === "unfollowed") {
-            $.ajax({
-                method: "POST",
-                url: `/users/${button.userId}/follow`,
-                dataType: 'json'
-            }).then(res => {
+            _api_util__WEBPACK_IMPORTED_MODULE_0__.default.followUser(button.userId).then(res => {
                 button.followState = "followed";
                 console.log("followed")
                 button.render();
             })
         } else {
-            $.ajax({
-                method: "DELETE",
-                url: `/users/${button.userId}/follow`,
-                dataType: 'json'
-            }).then(res => {
-                button.followState = "followed";
+            _api_util__WEBPACK_IMPORTED_MODULE_0__.default.unfollowUser(button.userId).then(res => {
+                button.followState = "unfollowed";
                 console.log("unfollowed")
                 button.render();
             })

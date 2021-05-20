@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { withRouter } from 'react-router';
 import MarkerManager from '../../util/marker_manager';
 
-const BenchMap = ({benches, updateFilter}) => {
+const BenchMap = ({benches, updateFilter, history}) => {
     let mapNode;
     const [markerManager, setMarkerManager] = useState('');
+    const getCoordsObj = latLng => ({
+        lat: latLng.lat(),
+        lng: latLng.lng()
+    });
 
     useEffect(() => {
         //Component did mount
@@ -23,6 +28,10 @@ const BenchMap = ({benches, updateFilter}) => {
             }
             updateFilter('bounds', bounds);
         })
+        myMap.addListener('click', (event) => {
+            const coords = getCoordsObj(event.latLng);
+            handleClick(coords);
+        })
         
         const newMarkerManager = new MarkerManager(myMap);
         setMarkerManager(newMarkerManager);
@@ -34,9 +43,16 @@ const BenchMap = ({benches, updateFilter}) => {
         markerManager.updateMarkers(benches);
     }, [benches])
 
+    const handleClick = (coords) => {
+        history.push({
+            pathname: "benches/new",
+            search: `lat=${coords.lat}&lng=${coords.lng}`
+        });
+    }
+
     return (
         <div ref={map => mapNode = map} id='map_container'></div>
     )
 }
 
-export default BenchMap;
+export default withRouter(BenchMap);

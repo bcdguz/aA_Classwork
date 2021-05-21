@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { newBench } from "../../../actions/bench_actions";
 import BenchForm from "./bench_form";
 
 const mSTP = (state, {location}) => {
@@ -8,5 +9,11 @@ const mSTP = (state, {location}) => {
     }
 }
 
-const BenchFormContainer = connect(mSTP, null)(BenchForm);
+const mDTP = () => {
+    return {
+        newBench: ((bench) => newBench(bench))
+    }
+}
+
+const BenchFormContainer = connect(mSTP, mDTP)(BenchForm);
 export default BenchFormContainer;

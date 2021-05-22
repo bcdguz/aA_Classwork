@@ -11597,3 +11597,279 @@ Processing by Api::BenchesController#index as JSON
 Completed 200 OK in 31ms (Views: 29.1ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for ::1 at 2021-05-21 17:06:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 439ms (Views: 434.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-05-21 17:06:04 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.809713098290686') AND (lat > '37.74187133792972') AND (lng > '-122.47791534423827') AND (lng < '-122.3920846557617')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.6ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.2ms)
+  Rendered api/benches/index.json.jbuilder (8.4ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.80933408223151&bounds%5BnorthEast%5D%5Blng%5D=-122.44018509053674&bounds%5BsouthWest%5D%5Blat%5D=37.74149197390761&bounds%5BsouthWest%5D%5Blng%5D=-122.5260157790133" for ::1 at 2021-05-21 17:06:11 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.80933408223151", "lng"=>"-122.44018509053674"}, "southWest"=>{"lat"=>"37.74149197390761", "lng"=>"-122.5260157790133"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.80933408223151') AND (lat > '37.74149197390761') AND (lng > '-122.5260157790133') AND (lng < '-122.44018509053674')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/index.json.jbuilder (3.6ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.810147809480306&bounds%5BnorthEast%5D%5Blng%5D=-122.42066780580234&bounds%5BsouthWest%5D%5Blat%5D=37.74230644821792&bounds%5BsouthWest%5D%5Blng%5D=-122.5064984942789" for ::1 at 2021-05-21 17:06:14 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.810147809480306", "lng"=>"-122.42066780580234"}, "southWest"=>{"lat"=>"37.74230644821792", "lng"=>"-122.5064984942789"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.810147809480306') AND (lat > '37.74230644821792') AND (lng > '-122.5064984942789') AND (lng < '-122.42066780580234')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (4.6ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.80648596624265&bounds%5BnorthEast%5D%5Blng%5D=-122.39411256664671&bounds%5BsouthWest%5D%5Blat%5D=37.73864124324655&bounds%5BsouthWest%5D%5Blng%5D=-122.47994325512327" for ::1 at 2021-05-21 17:06:15 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.80648596624265", "lng"=>"-122.39411256664671"}, "southWest"=>{"lat"=>"37.73864124324655", "lng"=>"-122.47994325512327"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.80648596624265') AND (lat > '37.73864124324655') AND (lng > '-122.47994325512327') AND (lng < '-122.39411256664671')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (7.5ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.7907515368327&bounds%5BnorthEast%5D%5Blng%5D=-122.41677186840452&bounds%5BsouthWest%5D%5Blat%5D=37.722892372094066&bounds%5BsouthWest%5D%5Blng%5D=-122.50260255688109" for ::1 at 2021-05-21 17:06:17 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.7907515368327", "lng"=>"-122.41677186840452"}, "southWest"=>{"lat"=>"37.722892372094066", "lng"=>"-122.50260255688109"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.7907515368327') AND (lat > '37.722892372094066') AND (lng > '-122.50260255688109') AND (lng < '-122.41677186840452')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/index.json.jbuilder (2.9ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.809198460151556&bounds%5BnorthEast%5D%5Blng%5D=-122.44852922314085&bounds%5BsouthWest%5D%5Blat%5D=37.741356227317944&bounds%5BsouthWest%5D%5Blng%5D=-122.53435991161741" for ::1 at 2021-05-21 17:06:28 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.809198460151556", "lng"=>"-122.44852922314085"}, "southWest"=>{"lat"=>"37.741356227317944", "lng"=>"-122.53435991161741"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.809198460151556') AND (lat > '37.741356227317944') AND (lng > '-122.53435991161741') AND (lng < '-122.44852922314085')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.5ms)
+  Rendered api/benches/index.json.jbuilder (4.9ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/benches" for ::1 at 2021-05-21 17:06:38 -0700
+Processing by Api::BenchesController#create as JSON
+  Parameters: {"bench"=>{"description"=>"A Japanese bench", "seating"=>"4", "lat"=>"37.76821223436301", "lng"=>"-122.4758233820764"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/benches_controller.rb:9
+  [1m[36mBench Create (0.6ms)[0m  [1m[32mINSERT INTO "benches" ("description", "lat", "lng", "created_at", "updated_at", "seating") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["description", "A Japanese bench"], ["lat", 37.76821223436301], ["lng", -122.4758233820764], ["created_at", "2021-05-22 00:06:38.816273"], ["updated_at", "2021-05-22 00:06:38.816273"], ["seating", 4]]
+  ↳ app/controllers/api/benches_controller.rb:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/benches_controller.rb:9
+  Rendering api/benches/show.json.jbuilder
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/show.json.jbuilder (2.0ms)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-05-21 17:06:38 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.809713098290686') AND (lat > '37.74187133792972') AND (lng > '-122.47791534423827') AND (lng < '-122.3920846557617')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (9.1ms)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.80781437624947&bounds%5BnorthEast%5D%5Blng%5D=-122.43843322753905&bounds%5BsouthWest%5D%5Blat%5D=37.73997087276031&bounds%5BsouthWest%5D%5Blng%5D=-122.52426391601561" for ::1 at 2021-05-21 17:09:48 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.80781437624947", "lng"=>"-122.43843322753905"}, "southWest"=>{"lat"=>"37.73997087276031", "lng"=>"-122.52426391601561"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.80781437624947') AND (lat > '37.73997087276031') AND (lng > '-122.52426391601561') AND (lng < '-122.43843322753905')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.6ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (5.6ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.78332781447936&bounds%5BnorthEast%5D%5Blng%5D=-122.4131933427944&bounds%5BsouthWest%5D%5Blat%5D=37.71546183770527&bounds%5BsouthWest%5D%5Blng%5D=-122.49902403127096" for ::1 at 2021-05-21 17:09:50 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.78332781447936", "lng"=>"-122.4131933427944"}, "southWest"=>{"lat"=>"37.71546183770527", "lng"=>"-122.49902403127096"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.78332781447936') AND (lat > '37.71546183770527') AND (lng > '-122.49902403127096') AND (lng < '-122.4131933427944')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.6ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (8.0ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.79979014311412&bounds%5BnorthEast%5D%5Blng%5D=-122.45782530080221&bounds%5BsouthWest%5D%5Blat%5D=37.73193927377449&bounds%5BsouthWest%5D%5Blng%5D=-122.54365598927878" for ::1 at 2021-05-21 17:09:51 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.79979014311412", "lng"=>"-122.45782530080221"}, "southWest"=>{"lat"=>"37.73193927377449", "lng"=>"-122.54365598927878"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.79979014311412') AND (lat > '37.73193927377449') AND (lng > '-122.54365598927878') AND (lng < '-122.45782530080221')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (5.4ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.80867522665494&bounds%5BnorthEast%5D%5Blng%5D=-122.40621139340308&bounds%5BsouthWest%5D%5Blat%5D=37.740832513463154&bounds%5BsouthWest%5D%5Blng%5D=-122.49204208187965" for ::1 at 2021-05-21 17:09:52 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.80867522665494", "lng"=>"-122.40621139340308"}, "southWest"=>{"lat"=>"37.740832513463154", "lng"=>"-122.49204208187965"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.80867522665494') AND (lat > '37.740832513463154') AND (lng > '-122.49204208187965') AND (lng < '-122.40621139340308')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.2ms)
+  Rendered api/benches/index.json.jbuilder (9.4ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.8113876401462&bounds%5BnorthEast%5D%5Blng%5D=-122.38011886410621&bounds%5BsouthWest%5D%5Blat%5D=37.743547417165956&bounds%5BsouthWest%5D%5Blng%5D=-122.46594955258277" for ::1 at 2021-05-21 17:09:53 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.8113876401462", "lng"=>"-122.38011886410621"}, "southWest"=>{"lat"=>"37.743547417165956", "lng"=>"-122.46594955258277"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.8113876401462') AND (lat > '37.743547417165956') AND (lng > '-122.46594955258277') AND (lng < '-122.38011886410621')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (6.5ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.8059627135261&bounds%5BnorthEast%5D%5Blng%5D=-122.42413407236975&bounds%5BsouthWest%5D%5Blat%5D=37.73811751018354&bounds%5BsouthWest%5D%5Blng%5D=-122.50996476084632" for ::1 at 2021-05-21 17:09:55 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.8059627135261", "lng"=>"-122.42413407236975"}, "southWest"=>{"lat"=>"37.73811751018354", "lng"=>"-122.50996476084632"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.8059627135261') AND (lat > '37.73811751018354') AND (lng > '-122.50996476084632') AND (lng < '-122.42413407236975')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (7.3ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.814621999476806&bounds%5BnorthEast%5D%5Blng%5D=-122.38352781479229&bounds%5BsouthWest%5D%5Blat%5D=37.746784746094974&bounds%5BsouthWest%5D%5Blng%5D=-122.46935850326885" for ::1 at 2021-05-21 17:10:38 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.814621999476806", "lng"=>"-122.38352781479229"}, "southWest"=>{"lat"=>"37.746784746094974", "lng"=>"-122.46935850326885"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.814621999476806') AND (lat > '37.746784746094974') AND (lng > '-122.46935850326885') AND (lng < '-122.38352781479229')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.5ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (8.6ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.81475761159486&bounds%5BnorthEast%5D%5Blng%5D=-122.4058437937962&bounds%5BsouthWest%5D%5Blat%5D=37.7469204827288&bounds%5BsouthWest%5D%5Blng%5D=-122.49167448227276" for ::1 at 2021-05-21 17:10:40 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.81475761159486", "lng"=>"-122.4058437937962"}, "southWest"=>{"lat"=>"37.7469204827288", "lng"=>"-122.49167448227276"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.5ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.81475761159486') AND (lat > '37.7469204827288') AND (lng > '-122.49167448227276') AND (lng < '-122.4058437937962')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (7.5ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.80629519939271&bounds%5BnorthEast%5D%5Blng%5D=-122.42242496062418&bounds%5BsouthWest%5D%5Blat%5D=37.73845030127183&bounds%5BsouthWest%5D%5Blng%5D=-122.50825564910075" for ::1 at 2021-05-21 17:10:41 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.80629519939271", "lng"=>"-122.42242496062418"}, "southWest"=>{"lat"=>"37.73845030127183", "lng"=>"-122.50825564910075"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.80629519939271') AND (lat > '37.73845030127183') AND (lng > '-122.50825564910075') AND (lng < '-122.42242496062418')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.2ms)
+  Rendered api/benches/index.json.jbuilder (7.6ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.80046298503558&bounds%5BnorthEast%5D%5Blng%5D=-122.44085536822406&bounds%5BsouthWest%5D%5Blat%5D=37.73261273328049&bounds%5BsouthWest%5D%5Blng%5D=-122.52668605670063" for ::1 at 2021-05-21 17:10:42 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.80046298503558", "lng"=>"-122.44085536822406"}, "southWest"=>{"lat"=>"37.73261273328049", "lng"=>"-122.52668605670063"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.80046298503558') AND (lat > '37.73261273328049') AND (lng > '-122.52668605670063') AND (lng < '-122.44085536822406')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.5ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (6.6ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.804125126922166&bounds%5BnorthEast%5D%5Blng%5D=-122.45733486041156&bounds%5BsouthWest%5D%5Blat%5D=37.73627823671849&bounds%5BsouthWest%5D%5Blng%5D=-122.54316554888813" for ::1 at 2021-05-21 17:10:43 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.804125126922166", "lng"=>"-122.45733486041156"}, "southWest"=>{"lat"=>"37.73627823671849", "lng"=>"-122.54316554888813"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.804125126922166') AND (lat > '37.73627823671849') AND (lng > '-122.54316554888813') AND (lng < '-122.45733486041156')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.6ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (7.0ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.819992310072&bounds%5BnorthEast%5D%5Blng%5D=-122.40617977007953&bounds%5BsouthWest%5D%5Blat%5D=37.75215998787141&bounds%5BsouthWest%5D%5Blng%5D=-122.4920104585561" for ::1 at 2021-05-21 17:10:48 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.819992310072", "lng"=>"-122.40617977007953"}, "southWest"=>{"lat"=>"37.75215998787141", "lng"=>"-122.4920104585561"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.4ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.819992310072') AND (lat > '37.75215998787141') AND (lng > '-122.4920104585561') AND (lng < '-122.40617977007953')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (6.7ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.79664145453739&bounds%5BnorthEast%5D%5Blng%5D=-122.40102428597287&bounds%5BsouthWest%5D%5Blat%5D=37.728787695220916&bounds%5BsouthWest%5D%5Blng%5D=-122.48685497444943" for ::1 at 2021-05-21 17:10:49 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.79664145453739", "lng"=>"-122.40102428597287"}, "southWest"=>{"lat"=>"37.728787695220916", "lng"=>"-122.48685497444943"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (0.7ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.79664145453739') AND (lat > '37.728787695220916') AND (lng > '-122.48685497444943') AND (lng < '-122.40102428597287')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.3ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/index.json.jbuilder (9.9ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.7ms)
+
+

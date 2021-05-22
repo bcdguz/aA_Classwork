@@ -7,7 +7,7 @@ const BenchIndex = (props) => {
         <ul>
             {props.benches.map(bench => {
                 return (
-                    <BenchIndexItem key={bench.id} bench={bench} />
+                    <BenchIndexItem bench={bench} />
                 )
             })}
         </ul>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const BenchIndexItem = (props) => {
     return (
-        <li>{props.bench.description}</li>
+        <li key={props.bench.id}>{props.bench.description}</li>
     )
 }
 

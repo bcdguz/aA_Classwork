@@ -11,7 +11,7 @@ const mSTP = (state, {location}) => {
 
 const mDTP = () => {
     return {
-        newBench: ((bench) => newBench(bench))
+        newBench: ((bench) => dispatch(newBench(bench)))
     }
 }
 

@@ -1,5 +1,28 @@
 header {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+    h1 {
+        font-size: xx-large;
+        font-weight: 500;
+        align-self: center;
+    }
+}
+
+.greeting-header {
+    margin-top: 5px;
+    display: flex;
+    align-content: space-between;
+}
+
+.header-signed-out {
+    justify-self: end;
+}
+
+.header-signed-in {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

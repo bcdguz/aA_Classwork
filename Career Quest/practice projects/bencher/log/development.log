@@ -12221,3 +12221,30 @@ Processing by Api::BenchesController#index as JSON
 Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2021-05-27 16:14:15 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bcdguz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1oReTA20I-8eRUJQCh4Vsw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 1307ms (Views: 1292.7ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/api/benches?bounds%5BnorthEast%5D%5Blat%5D=37.809713098290686&bounds%5BnorthEast%5D%5Blng%5D=-122.3920846557617&bounds%5BsouthWest%5D%5Blat%5D=37.74187133792972&bounds%5BsouthWest%5D%5Blng%5D=-122.47791534423827" for ::1 at 2021-05-27 16:14:17 -0700
+Processing by Api::BenchesController#index as JSON
+  Parameters: {"bounds"=>{"northEast"=>{"lat"=>"37.809713098290686", "lng"=>"-122.3920846557617"}, "southWest"=>{"lat"=>"37.74187133792972", "lng"=>"-122.47791534423827"}}}
+  Rendering api/benches/index.json.jbuilder
+  [1m[36mBench Load (1.6ms)[0m  [1m[34mSELECT "benches".* FROM "benches" WHERE (lat < '37.809713098290686') AND (lat > '37.74187133792972') AND (lng > '-122.47791534423827') AND (lng < '-122.3920846557617')[0m
+  ↳ app/views/api/benches/index.json.jbuilder:1
+  Rendered api/benches/_bench.json.jbuilder (0.4ms)
+  Rendered api/benches/_bench.json.jbuilder (0.1ms)
+  Rendered api/benches/_bench.json.jbuilder (0.0ms)
+  Rendered api/benches/_bench.json.jbuilder (0.0ms)
+  Rendered api/benches/_bench.json.jbuilder (0.0ms)
+  Rendered api/benches/index.json.jbuilder (28.2ms)
+Completed 200 OK in 44ms (Views: 24.9ms | ActiveRecord: 15.7ms)
+
+

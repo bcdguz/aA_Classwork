@@ -14,7 +14,5 @@
  *= require_self
  */
 
- #map_container{
-     width: 500px;
-     height: 500px;
- }
+ @import "components/*"
+

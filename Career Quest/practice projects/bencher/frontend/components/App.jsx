@@ -11,7 +11,9 @@ const App = () => {
     return (
         <div>
             <header>
-                <h1>Bench Bnb</h1>
+                <div>
+                    <h1>Bench Bnb</h1>
+                </div>
                 <GreetingContainer />
             </header>
             

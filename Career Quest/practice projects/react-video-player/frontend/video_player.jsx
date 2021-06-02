@@ -9,7 +9,7 @@ class VideoPlayer extends React.Component {
     render() {
         const embedId = "Dx5DOi_8-uc"
         return (
-            <div>
+            <div class="video-container">
                 <iframe
                     width="720"
                     height="480"

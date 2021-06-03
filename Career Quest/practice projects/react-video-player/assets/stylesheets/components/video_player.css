@@ -5,3 +5,12 @@
     align-items: center;
 }
 
+.controls-container {
+    margin-top: 10px;
+    width: 720px;
+    display: flex;
+}
+
+.controls-container input {
+    flex-grow: 2;
+}

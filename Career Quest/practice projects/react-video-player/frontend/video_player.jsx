@@ -1,4 +1,5 @@
 import React from 'react';
+import onYouTubeIframeAPIReady from './api/yt_player_api';
 
 
 class VideoPlayer extends React.Component {
@@ -6,9 +7,14 @@ class VideoPlayer extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.player = onYouTubeIframeAPIReady();
+        debugger;
+    }
+
     changeTime = (e) => {
         e.preventDefault();
-        const 
+         
     }
 
     render() {
@@ -16,6 +22,7 @@ class VideoPlayer extends React.Component {
         return (
             <div className="video-container">
                 <iframe
+                    id="existing-iframe"
                     width="720"
                     height="480"
                     src={`https://www.youtube.com/embed/${embedId}?controls=0`}

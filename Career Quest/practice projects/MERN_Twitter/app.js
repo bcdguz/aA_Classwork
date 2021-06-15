@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
-const bodyParser = require("body-parser");
 //route imports
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
@@ -13,9 +12,9 @@ mongoose
     .then(() => console.log("Connected to MongoDB succesfully"))
     .catch(err => console.log(err));
 
-//body parser to parse json
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+//parse json responses to front end
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 //routes
 app.get("/", (req, res) => res.send("HelloWorld"));
 app.use("/api/users", users);

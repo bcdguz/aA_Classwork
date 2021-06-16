@@ -16,7 +16,10 @@ mongoose
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 //routes
-app.get("/", (req, res) => res.send("HelloWorld"));
+app.get("/", (req, res) => {
+    console.log(res);
+    res.send("HelloWorld");
+});
 app.use("/api/users", users);
 app.use("/api/tweets", tweets);
 

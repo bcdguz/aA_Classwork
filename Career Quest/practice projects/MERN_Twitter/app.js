@@ -13,12 +13,13 @@ mongoose
     .then(() => console.log("Connected to MongoDB succesfully"))
     .catch(err => console.log(err));
 
+app.use(passport.initialize());
+require('./config/passport')(passport);
+
 //parse json responses to front end
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.use(passport.initialize());
-require('./config/passport')(passport);
 //routes
 app.get("/", (req, res) => {
     console.log(res);

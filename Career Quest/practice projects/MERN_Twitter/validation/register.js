@@ -1,7 +1,7 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
 
-module.exports == function validateRegisterInput(data) {
+module.exports = function validateRegisterInput(data) {
     let errors = {};
 
     data.handle = validText(data.handle) ? data.handle : '';
@@ -25,7 +25,7 @@ module.exports == function validateRegisterInput(data) {
         errors.password = 'Password must be between 6 and 30 chars';
     }
 
-    if (Validator.isEmail(data.password2)) {
+    if (Validator.isEmpty(data.password2)) {
         errors.password2 = 'Confirm Password field is required';
     }
 

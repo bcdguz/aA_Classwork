@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
+const passport = require('passport');
 //route imports
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
@@ -15,6 +16,9 @@ mongoose
 //parse json responses to front end
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use(passport.initialize());
+require('./config/passport')(passport);
 //routes
 app.get("/", (req, res) => {
     console.log(res);

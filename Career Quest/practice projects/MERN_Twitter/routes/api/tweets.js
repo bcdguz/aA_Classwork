@@ -1,6 +1,8 @@
 const express = require("express");
+const passport = require("passport");
 const Tweet = require("../../models/Tweet");
 const router = express.Router();
+const validateTweetInput = require('../../validation/tweets');
 
 router.get('/', (req, res) => {
     Tweet.find()
@@ -20,5 +22,23 @@ router.get('/:id', (req, res) => {
         .then(tweet => res.json(tweet))
         .catch(err => res.status(404).json({ notweetsfound: 'No tweet with that ID' }))
 })
+
+router.post('/',
+    passport.authenticate('jwt', {session: false}),
+    (req, res) => {
+        const {errors, isValid} = validateTweetInput(req.body);
+
+        if (!isValid) {
+            return res.status(400).json(errors);
+        }
+
+        const newTweet = new Tweet({
+            text: req.body.text,
+            user: req.user.id
+        })
+
+        newTweet.save()
+            .then(tweet => res.json(tweet));
+    })
 
 module.exports = router;
